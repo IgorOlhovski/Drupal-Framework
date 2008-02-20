@@ -1,8 +1,0 @@
-; $Id$
-name = Framework
-description = Extremely minimal starting point for theme developers.
-version = VERSION
-core = 6.x
-engine = phptemplate
-stylesheets[all][] = style.css
-stylesheets[print][] = print.css
