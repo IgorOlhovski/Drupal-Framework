@@ -1,7 +1,7 @@
 ; $Id$
 
 name = Framework
-description = Extremely minimal starting point for theme developers.
+description = Framework is a blank canvas for theme developers. Use Framework as a starting point to help facilitate your theme development.
 version = VERSION
 core = 6.x
 engine = phptemplate
