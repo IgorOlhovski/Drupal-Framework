@@ -79,8 +79,9 @@
             <?php print $right ?>
           </div>
         <?php endif; ?>
-
+        <div class="clear"></div>
       </div> <!-- /container -->
+      <div class="clear"></div>
     </div>
 <!-- /layout -->
 

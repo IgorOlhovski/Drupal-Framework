@@ -88,6 +88,7 @@ width:802px
 /*Adjusts for 2 columns - sidebar-right*/
 body.sidebar-right #center {
 border-right:1px solid #E9EFF3;
+float:left;
 padding-right:10px;
 width:802px
 }
