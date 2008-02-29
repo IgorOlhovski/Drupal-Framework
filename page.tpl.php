@@ -33,12 +33,18 @@
           }
           $site_html = implode(' ', $site_fields);
 
-          if ($site_title) {
+          if ($logo || $site_title) {
             print '<h1><a href="'. check_url($front_page) .'" title="'. $site_title .'">';
+
+// Remove this line and slashes '//' below to enable logo management in Admin>Themes>Configure
+//            if ($logo) {
+//              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
+//            }
+
             print $site_html .'</a></h1>';
           }
         ?>
-      </div> <!-- /header -->
+      </div>
 
       <div id="nav">
         <?php if (isset($primary_links)) : ?>
@@ -79,9 +85,10 @@
             <?php print $right ?>
           </div>
         <?php endif; ?>
-        <div class="clear"></div>
+
+        <span class="clear"></span>
       </div> <!-- /container -->
-      <div class="clear"></div>
+      <span class="clear"></span>
     </div>
 <!-- /layout -->
 
