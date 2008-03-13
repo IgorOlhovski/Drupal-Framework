@@ -35,12 +35,9 @@
 
           if ($logo || $site_title) {
             print '<h1><a href="'. check_url($front_page) .'" title="'. $site_title .'">';
-
-// Remove this line and slashes '//' below to enable logo management in Admin>Themes>Configure
 //            if ($logo) {
 //              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
 //            }
-
             print $site_html .'</a></h1>';
           }
         ?>
