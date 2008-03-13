@@ -1,8 +1,7 @@
 $Id$
 
 Drupal 5.7 Framework theme
-Created by Andre Griffin
-
+Created by Andre Griffin > user andregriffin
 
 
 Framework is a blank canvas for theme developers. Use Framework as a starting point to help facilitate your theme development.
@@ -16,9 +15,21 @@ Features
 Framework is not intended to be used as is. Please edit freely.
 
 
-
-***** Install to sites/all/themes
-
+>>> INSTALL to sites/all/themes
 
 
-Please refer to http://drupal.org/support for theming support.
+>>> CONFIGURATION NOTES:
+
+To enable Drupal logo management in admin>themes>configure: remove comment slashes "//" on lines 36-38 in page.tpl.php
+
+
+>>> SUPPORT
+
+If you have questions or problems, check the issue list before submitting a new issue: 
+http://drupal.org/project/issues/framework
+
+For general support, please refer to:
+http://drupal.org/support
+
+To contact me directly, please visit: 
+http://drupal.org/user/78099/contact
