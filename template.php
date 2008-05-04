@@ -88,3 +88,14 @@ function phptemplate_menu_local_tasks() {
 
   return $output;
 }
+
+/**
+ * Adds even and odd classes to <li> tags in ul.menu lists
+ */
+function phptemplate_menu_item($mid, $children = '', $leaf = true) {
+static $count = 0;
+$zebra = ($count % 2) ? 'odd' : 'even';
+$count++;
+return '<li class="' . ($leaf ? 'leaf' : ($children ? 'expanded' : 'collapsed')) .' ' . $zebra . '">'. menu_item_link($mid) . $children ."</li>\n";
+}
+

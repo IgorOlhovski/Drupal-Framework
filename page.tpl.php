@@ -8,9 +8,7 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lt IE 7]>
-    <style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie.css";</style>
-    <![endif]-->
+    <!--[if lt IE 7]><style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie.css";</style><![endif]-->
   </head>
   <body<?php print phptemplate_body_class($sidebar_left, $sidebar_right); ?>>
 
@@ -18,6 +16,7 @@
     <div id="wrapper">
       <div id="header">
         <?php print $header; ?>
+
         <?php
           // Prepare header
           $site_fields = array();
@@ -28,7 +27,8 @@
             $site_fields[] = check_plain($site_slogan);
           }
           $site_title = implode(' ', $site_fields);
-          $site_fields[0] = '<span>'. $site_fields[0] .'</span>';
+          $site_fields[0] = '<span>'. $site_name .'</span>';
+          $site_fields[1] = '<span id="slogan">'. $site_slogan .'</span>';
           $site_html = implode(' ', $site_fields);
 
           if ($logo || $site_title) {
@@ -36,27 +36,31 @@
 //            if ($logo) {
 //              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
 //            }
-             print $site_html .'</a></h1>';
+            print $site_html .'</a></h1>';
           }
         ?>
-        </div>
+
+        <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
+        <div class="clear"></div>
+      </div>
 
       <div id="nav">
+
         <?php if (isset($primary_links)) : ?>
-          <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
+        <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
         <?php endif; ?>
         <?php if (isset($secondary_links)) : ?>
-          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
         <?php endif; ?>
+
       </div>
 
       <div id="container">
-
+  
         <?php if ($sidebar_left): ?>
-          <div id="sidebar-left" class="sidebar">
-            <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
-            <?php print $sidebar_left ?>
-          </div>
+        <div id="sidebar-left" class="sidebar">
+          <?php print $sidebar_left ?>
+        </div> <!-- /#sidebar-left -->
         <?php endif; ?>
 
         <div id="center">
@@ -69,24 +73,27 @@
           <?php if ($help): print $help; endif; ?>
           <?php if ($messages): print $messages; endif; ?>
 
-							<?php print $content ?>
+          <?php print $content ?>
 
-          <div id="footer"><?php print $footer_message ?><?php print $feed_icons ?></div>
         </div> <!-- /#center -->
 
         <?php if ($sidebar_right): ?>
-          <div id="sidebar-right" class="sidebar">
-            <?php if (!$sidebar_left && $search_box): ?><?php print $search_box ?><?php endif; ?>
-            <?php print $sidebar_right ?>
-          </div>
+        <div id="sidebar-right" class="sidebar">
+          <?php print $sidebar_right ?>
+        </div> <!-- /#sidebar-right -->
         <?php endif; ?>
 
-        <span class="clear"></span>
+        <div id="footer" class="clear">
+          <?php print $footer_message ?>
+          <?php print $feed_icons ?>
+        </div>
+
       </div> <!-- /container -->
       <span class="clear"></span>
     </div>
 <!-- /layout -->
 
   <?php print $closure ?>
+
   </body>
 </html>

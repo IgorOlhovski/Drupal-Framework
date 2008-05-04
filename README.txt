@@ -12,7 +12,7 @@ Features
     * CSS file is organized by section and main selectors are already in place.
     * The administration section is stripped out of the default Garland theme.
 
-Framework is not intended to be used as is. Please edit freely.
+Framework is not necessarily to be used as is. Please edit freely.
 
 
 >>> INSTALL to sites/all/themes
@@ -21,6 +21,10 @@ Framework is not intended to be used as is. Please edit freely.
 >>> CONFIGURATION NOTES:
 
 To enable Drupal logo management in admin>themes>configure: remove comment slashes "//" on lines 36-38 in page.tpl.php
+
+To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 440 in style.css
+
+To add regions, see: http://drupal.org/node/242107#comment-798428
 
 
 >>> SUPPORT
