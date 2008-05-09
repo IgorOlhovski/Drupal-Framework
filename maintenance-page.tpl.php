@@ -8,9 +8,7 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lt IE 7]>
-    <?php print phptemplate_get_ie_styles(); ?>
-    <![endif]-->
+    <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
   </head>
   <body<?php print phptemplate_body_class($left, $right); ?>>
 
@@ -18,6 +16,7 @@
     <div id="wrapper">
       <div id="header">
         <?php print $header; ?>
+
         <?php
           // Prepare header
           $site_fields = array();
@@ -31,6 +30,7 @@
           if ($site_fields) {
             $site_fields[0] = '<span>'. $site_fields[0] .'</span>';
           }
+          $site_fields[1] = '<span id="slogan">'. $site_slogan .'</span>';
           $site_html = implode(' ', $site_fields);
 
           if ($logo || $site_title) {
@@ -41,24 +41,27 @@
             print $site_html .'</a></h1>';
           }
         ?>
-      </div> <!-- /header -->
+
+        <div class="clear"></div>
+      </div>
 
       <div id="nav">
+
         <?php if (isset($primary_links)) : ?>
-          <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
+        <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
         <?php endif; ?>
         <?php if (isset($secondary_links)) : ?>
-          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
         <?php endif; ?>
+
       </div>
 
       <div id="container">
 
         <?php if ($left): ?>
-          <div id="sidebar-left" class="sidebar">
-            <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
-            <?php print $left ?>
-          </div>
+        <div id="sidebar-left" class="sidebar">
+          <?php print $left ?>
+        </div> <!-- /#sidebar-left -->
         <?php endif; ?>
 
         <div id="center">
@@ -66,24 +69,27 @@
           <?php print $help; ?>
           <?php print $messages; ?>
 
-            <?php print $content ?>
+          <?php print $content ?>
 
-          <div id="footer"><?php print $footer_message . $footer ?></div>
         </div> <!-- /#center -->
   
         <?php if ($right): ?>
-          <div id="sidebar-right" class="sidebar">
-            <?php if (!$left && $search_box): ?><?php print $search_box ?><?php endif; ?>
-            <?php print $right ?>
-          </div>
+        <div id="sidebar-right" class="sidebar">
+          <?php print $right ?>
+        </div> <!-- /#sidebar-right -->
         <?php endif; ?>
 
-        <span class="clear"></span>
+        <div id="footer" class="clear">
+          <?php print $footer_message . $footer ?>
+          <?php print $feed_icons ?>
+        </div>
+
       </div> <!-- /container -->
       <span class="clear"></span>
     </div>
 <!-- /layout -->
 
   <?php print $closure ?>
+
   </body>
 </html>

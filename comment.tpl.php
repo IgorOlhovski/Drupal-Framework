@@ -2,28 +2,34 @@
 // $Id$
 ?>
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status; print ' '. $zebra; ?>">
+  <div class="comment-bar">
 
-  <?php if ($submitted): ?>
+    <?php if ($submitted): ?>
     <span class="submitted"><?php print $submitted; ?></span>
-  <?php endif; ?>
+    <?php endif; ?>
 
-  <?php if ($comment->new) : ?>
+    <?php if ($comment->new) : ?>
     <span class="new"><?php print drupal_ucfirst($new) ?></span>
-  <?php endif; ?>
+    <?php endif; ?>
+
+  </div>
 
   <?php print $picture ?>
 
-    <h3><?php print $title ?></h3>
+  <h3><?php print $title ?></h3>
 
-    <div class="content">
-      <?php print $content ?>
-      <?php if ($signature): ?>
-        <div>—</div>
-        <?php print $signature ?>
-      <?php endif; ?>
-    </div>
+  <div class="content">
+    <?php print $content ?>
+    <?php if ($signature): ?>
+    <div>—</div>
+      <?php print $signature ?>
+    <?php endif; ?>
+  </div>
 
   <?php if ($links): ?>
-    <div class="links"><?php print $links ?></div>
+  <div class="links">
+    <?php print $links ?>
+  </div>
   <?php endif; ?>
+
 </div>
