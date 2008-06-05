@@ -8,7 +8,8 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lt IE 7]><style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie.css";</style><![endif]-->
+    <!--[if lte IE 7]><style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie.css";</style><![endif]--><!--For IE7 and lower-->
+    <!--[if lt IE 7]><style type="text/css" media="all">@import "<?php print base_path() . path_to_theme() ?>/fix-ie6.css";</style><![endif]--><!--For IE6 and lower-->
   </head>
   <body<?php print phptemplate_body_class($sidebar_left, $sidebar_right); ?>>
 

@@ -1,4 +1,20 @@
 @charset "utf-8";
-/* $Id*/
-/* Drupal 5.7 Framework - Created by Andre Griffin
+/* $Id$*/
+/* Drupal 5 Framework - Created by Andre Griffin
+ * FOR IE 7 AND LOWER
  */
+
+/* DIRTY FIX FOR DEVEL THEMER BREAKING LAYOUT */
+.thmr_call {
+width:100%;
+text-align:center;
+}
+
+.thmr_call .thmr_call {
+width:auto;
+text-align:left;
+}
+
+.thmr_call #wrapper {
+text-align:left;
+}
