@@ -8,7 +8,8 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
+    <!--[if lte IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]--><!--For IE7 and lower-->
+    <!--[if lt IE 7]><?php print phptemplate_get_ie6_styles(); ?><![endif]--><!--For IE6 and lower-->
   </head>
   <body<?php print phptemplate_body_class($left, $right); ?>>
 

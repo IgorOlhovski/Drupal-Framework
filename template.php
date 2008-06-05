@@ -33,7 +33,9 @@ function phptemplate_body_class($left, $right) {
  */
 function phptemplate_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    return '<div class="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
+// uncomment the next line to enable current page in the breadcrumb trail
+//    $breadcrumb[] = drupal_get_title();
+    return '<div class="breadcrumb">'. implode(' » ', $breadcrumb) .'</div>';
   }
 }
 
@@ -92,6 +94,11 @@ function phptemplate_node_submitted($node) {
  */
 function phptemplate_get_ie_styles() {
   $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie.css" />';
+  return $iecss;
+}
+
+function phptemplate_get_ie6_styles() {
+  $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie6.css" />';
   return $iecss;
 }
 

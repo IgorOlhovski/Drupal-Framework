@@ -1,20 +1,20 @@
 @charset "utf-8";
-/* $Id*/
+/* $Id$*/
 /* Drupal 6 Framework - Created by Andre Griffin
 ------------------------------------------------------------------
 [Table of contents]
 
-1.  Global
-1.  Layout
-2.  Header
-3.  Navigation
-4.  Nodes
-5.  Comments
-6.  Sidebars
-7.  Blocks
-8.  Footer
-9.  CSS Support
-10. Administration
+ 1.Global
+ 2.Layout
+ 3.Header
+ 4.Navigation
+ 5.Nodes
+ 6.Comments
+ 7.Sidebars
+ 8.Blocks
+ 9.Footer
+10.CSS Support
+11.Administration
 
 [Color codes]
 
@@ -28,7 +28,7 @@
 ----------------------------------------------------------------*/
 
 /*************************
- * GLOBAL                *
+ * 1.GLOBAL              *
  *************************/
 body {
 background:#fff;
@@ -86,7 +86,7 @@ outline:none
 }
 
 /*************************
- * LAYOUT                *
+ * 2.LAYOUT              *
  *************************/
 #wrapper {
 margin:0 auto;
@@ -129,7 +129,7 @@ width:780px
 }
 
 /*************************
- * HEADER                *
+ * 3.HEADER              *
  *************************/
 #header {
 margin:0;
@@ -155,7 +155,7 @@ margin:0
 }
 
 /*************************
- * NAVIGATION            *
+ * 4.NAVIGATION          *
  *************************/
 ul.links li {
 background:none;
@@ -215,7 +215,7 @@ margin:0 0 -1.3em;
 padding:0
 }
 
-.breadcrumb a {
+.breadcrumb a:link,.breadcrumb a:visited {
 color:#666
 }
 
@@ -224,7 +224,7 @@ color:#999
 }
 
 /*************************
- * NODES                 *
+ * 5.NODES               *
  *************************/
 span.submitted {
 color:#898989;
@@ -271,7 +271,7 @@ color:#069
 }
 
 /*************************
- * COMMENTS              *
+ * 6.COMMENTS            *
  *************************/
 .comment {
 margin:20px 0 0;
@@ -308,7 +308,7 @@ padding-left:10px
 }
 
 /*************************
- * SIDEBARS              *
+ * 7.SIDEBARS            *
  *************************/
 .sidebar {
 width:160px
@@ -325,7 +325,7 @@ margin-left:9px
 }
 
 /*************************
- * BLOCKS                *
+ * 8.BLOCKS              *
  *************************/
 .block {
 margin:0 0 10px
@@ -354,7 +354,7 @@ border-top:1px solid #d3e7f3
 }
 
 /*************************
- * FOOTER                *
+ * 9.FOOTER              *
  *************************/
 #footer {
 border-top:1px solid #b4d7f0;
@@ -376,7 +376,7 @@ top:6px;
 }
 
 /*************************
- * CSS SUPPORT           *
+ * 10.CSS SUPPORT        *
  *************************/
 span.clear     { clear:both;display:block;font-size:0;height:1px;line-height:0;margin-bottom:-1px }
 .clear         { clear:both }
@@ -404,7 +404,7 @@ span.clear     { clear:both;display:block;font-size:0;height:1px;line-height:0;m
 .nobullet      { list-style:none;list-style-image:none }
 
 /*************************
- * ADMINISTRATION        *
+ * 11.ADMINISTRATION     *
  *************************/
 
 /* POSITION ADMIN TAB LINKS AND STYLE ADMIN H2 */
@@ -454,5 +454,5 @@ ul.menu li.expanded{background-color:#d4e7f3;border:none;padding-bottom:0}
 ul.menu li.expanded ul{border-bottom:3px solid #d4e7f3;border-top:1px solid #b4d7f0;margin-top:.2em}
 /* END ZEBRA COLORING */
 
-/* TABLES AND OTHER STUFF YOU PROBABLY WILL NOT NEED TO CHANGE */
-input{color:#494949;font:12px/100% Verdana, sans-serif}textarea,select{color:#494949;font:12px/160% Verdana, sans-serif}em{padding:0 3px 0 0}hr{background:#5294c1;border:none;height:1px;margin:0;padding:0}table{margin:1em 0;width:100%}thead th{border-bottom:2px solid #d3e7f4;color:#494949;font-weight:700}th a:link,th a:visited{color:#6f9dbd}td,th{padding:.3em .5em}tr.even,tr.odd,tbody th{border:solid #d3e7f4;border-width:1px 0}tr.odd,tr.info{background-color:#edf5fa}tr.even{background-color:#fff}tr.drag{background-color:#fffff0}tr.drag-previous{background-color:#ffd}tr.odd td.active{background-color:#ddecf5}tr.even td.active{background-color:#e6f1f7}td.region,td.module,td.container,td.category{background-color:#d4e7f3;border-bottom:1px solid #b4d7f0;border-top:1.5em solid #fff;color:#455067;font-weight:700}tr:first-child td.region,tr:first-child td.module,tr:first-child td.container,tr:first-child td.category{border-top-width:0}tr.odd td.menu-disabled{background-color:#edf5fa}tr.even td.menu-disabled{background-color:#fff}span.form-required{color:#ffae00}.description{color:#898989;font-size:0.92em;line-height:150%;margin-bottom:0.75em}.messages,.preview{margin:.75em 0;padding:.5em 1em}.messages ul{margin:0}.box{margin-bottom:2.5em}.profile dd{margin-bottom:1.6em}#autocomplete li{cursor:default;margin:0;padding:2px}#autocomplete li.selected,tr.selected td,tr.selected td.active{background:#027ac6;color:#fff}.form-checkboxes,.form-radios,.form-checkboxes .form-item,.form-radios .form-item{margin:0.25em 0}#center form{margin-bottom:2em}.form-button,.form-submit{margin:2em 0.5em 1em 0}#dblog-form-overview .form-submit,.confirmation .form-submit,.search-form .form-submit,.poll .form-submit,fieldset .form-button,fieldset .form-submit,.sidebar .form-button,.sidebar .form-submit,table .form-button,table .form-submit{margin:0}fieldset ul.clear-block li{background-image:none;margin:0;padding:0}fieldset{background:#fff;border:1px solid #d9eaf5;margin:1em 0;padding:1em}fieldset legend{display:block}html.js fieldset.collapsed{background:transparent;padding-bottom:.6em;padding-top:0}html.js fieldset.collapsible legend a{background:url(images/menu-expanded.gif) no-repeat 0 50%;padding-left:2em}html.js fieldset.collapsed legend a{background:url(images/menu-collapsed.gif) no-repeat 0 50%}div.admin-panel,div.admin-panel .description,div.admin-panel .body,div.admin,div.admin .left,div.admin .right,div.admin .expert-link,div.item-list,.menu{margin:0;padding:0}div.admin h3{margin-bottom:0}div.admin .left{float:left;width:48%}div.admin .right{float:right;width:48%}div.admin-panel{background:none;padding:1em 1em 1.5em}div.admin-panel .description{margin-bottom:1.5em}div.admin-panel dl{margin:0}div.admin-panel dd{color:#898989;font-size:0.92em;line-height:1.3em;margin-bottom:.65em;margin-top:-0.2em}tr.selected td a:link,tr.selected td a:visited,tr.selected td a:active{color:#d3e7f4}tr.taxonomy-term-divider-top{border-bottom:none}tr.taxonomy-term-divider-bottom{border-top:1px dotted #CCC}table.system-status-report th{border-color:#d3e7f4}.messages{background-color:#fff;border:1px solid #b8d3e5}.preview{background-color:#fcfce8;border:1px solid #e5e58f}div.status{border-color:#c7f2c8;color:#33a333}div.error,tr.error{background-color:#FCC;color:#a30000}.form-item input.error,.form-item textarea.error{border:1px solid #c52020;color:#363636}table.system-status-report tr.error,table.system-status-report tr.error th{background-color:#fcc;border-color:#ebb;color:#200}table.system-status-report tr.warning,table.system-status-report tr.warning th{background-color:#ffd;border-color:#eeb}table.system-status-report tr.ok,table.system-status-report tr.ok th{background-color:#dfd;border-color:#beb}
+/* STUFF YOU PROBABLY WILL NOT NEED TO CHANGE - INCLUDES ADMIN COLORING */
+input{color:#494949;font:12px/100% Verdana, sans-serif}textarea,select{color:#494949;font:12px/160% Verdana, sans-serif}em{padding:0 3px 0 0}hr{background:#5294c1;border:none;height:1px;margin:0;padding:0}table{margin:1em 0;width:100%}thead th{border-bottom:2px solid #d3e7f4;color:#494949;font-weight:700}th a:link,th a:visited{color:#6f9dbd}td,th{padding:.3em .5em}tr.even,tr.odd,tbody th{border:solid #d3e7f4;border-width:1px 0}tr.odd,tr.info{background-color:#edf5fa}tr.even{background-color:#fff}tr.drag{background-color:#fffff0}tr.drag-previous{background-color:#ffd}tr.odd td.active{background-color:#ddecf5}tr.even td.active{background-color:#e6f1f7}td.region,td.module,td.container,td.category{background-color:#d4e7f3;border-bottom:1px solid #b4d7f0;border-top:1.5em solid #fff;color:#455067;font-weight:700}tr:first-child td.region,tr:first-child td.module,tr:first-child td.container,tr:first-child td.category{border-top-width:0}tr.odd td.menu-disabled{background-color:#edf5fa}tr.even td.menu-disabled{background-color:#fff}span.form-required{color:#ffae00}.description{color:#898989;font-size:0.92em;line-height:150%;margin-bottom:0.75em}.messages,.preview{margin:.75em 0;padding:.5em 1em}.messages ul{margin:0}.box{margin-bottom:2.5em}.profile dd{margin-bottom:1.6em}#autocomplete li{cursor:default;margin:0;padding:2px}#autocomplete li.selected,tr.selected td,tr.selected td.active{background:#027ac6;color:#fff}.form-checkboxes,.form-radios,.form-checkboxes .form-item,.form-radios .form-item{margin:0.25em 0}#center form{margin-bottom:2em}.form-button,.form-submit{margin:2em 0.5em 1em 0}#dblog-form-overview .form-submit,.confirmation .form-submit,.search-form .form-submit,.poll .form-submit,fieldset .form-button,fieldset .form-submit,.sidebar .form-button,.sidebar .form-submit,table .form-button,table .form-submit{margin:0}fieldset ul.clear-block li{background-image:none;margin:0;padding:0}fieldset{background:#fff;border:1px solid #d9eaf5;margin:1em 0;padding:1em}fieldset legend{display:block}html.js fieldset.collapsed{background:transparent;padding-bottom:.6em;padding-top:0}html.js fieldset.collapsible legend a{background:url(images/menu-expanded.gif) no-repeat 0 50%;padding-left:2em}html.js fieldset.collapsed legend a{background:url(images/menu-collapsed.gif) no-repeat 0 50%}div.admin-panel,div.admin-panel .description,div.admin-panel .body,div.admin,div.admin .left,div.admin .right,div.admin .expert-link,div.item-list,.menu{margin:0;padding:0}div.admin h3{margin-bottom:0}div.admin .left{float:left;width:48%}div.admin .right{float:right;width:48%}div.admin-panel{background:none;padding:1em 1em 1.5em}div.admin-panel .description{margin-bottom:1.5em}div.admin-panel dl{margin:0}div.admin-panel dd{color:#898989;font-size:0.92em;line-height:1.3em;margin-bottom:.65em;margin-top:-0.2em}tr.selected td a:link,tr.selected td a:visited,tr.selected td a:active{color:#d3e7f3}tr.taxonomy-term-divider-top{border-bottom:none}tr.taxonomy-term-divider-bottom{border-top:1px dotted #CCC}table.system-status-report th{border-color:#d3e7f3}.messages{background-color:#fff;border:1px solid #b8d3e5}.preview{background-color:#fcfce8;border:1px solid #e5e58f}div.status{border-color:#c7f2c8;color:#33a333}div.error,tr.error{background-color:#FCC;color:#a30000}.form-item input.error,.form-item textarea.error{border:1px solid #c52020;color:#363636}table.system-status-report tr.error,table.system-status-report tr.error th{background-color:#fcc;border-color:#ebb;color:#200}table.system-status-report tr.warning,table.system-status-report tr.warning th{background-color:#ffd;border-color:#eeb}table.system-status-report tr.ok,table.system-status-report tr.ok th{background-color:#dfd;border-color:#beb}
