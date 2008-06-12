@@ -9,10 +9,3 @@ stylesheets[all][] = style.css
 stylesheets[print][] = print.css
 
 
-
-; Information added by drupal.org packaging script on 2008-05-09
-version = "6.x-1.7"
-core = "6.x"
-project = "framework"
-datestamp = "1210370108"
-
