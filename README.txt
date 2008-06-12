@@ -8,8 +8,8 @@ Framework is a blank canvas for theme developers. Use Framework as a starting po
 
 Features
 
-    * The Framework theme gives general placement and formatting to basic Drupal elements.
-    * Fixed width of 960px by default. Main column resizes between two-column and three-column layouts.
+    * Framework gives general placement and formatting to basic Drupal elements
+    * Fixed width of 960px by default. Main column resizes between two-column and three-column layouts
     * CSS file is highly organized, including a table of contents, color codes, section flags, alphabetical properties, etc.
     * Includes a list of CSS utility classes for easy content formatting
     * W3C valid CSS 2.1 / XHTML 1.0 Strict
@@ -17,7 +17,9 @@ Features
     * Search in sidebar (as a block) and header (as a theme configuration option)
     * Clean and simplified code and file structure
     * Works nicely in mobile browsers
-    * The administration section is adapted from the default Garland theme.
+    * The administration section is adapted from the default Garland theme
+    * Complete em unit text sizing
+    * Inverse color scheme style for dark sites
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 
@@ -36,6 +38,8 @@ To disable zebra coloring from sidebar menues: remove comment star and slash "*/
 To add regions, see: http://drupal.org/node/242107#comment-798428
 
 To enable current node to show in the breadcrumb trail, remove comment slashes on line 37 of template.php
+
+To use dark version of Framework, rename style.css to something like style-light.css (or just delete it). Then rename style-dark.css to style.css
 
 
 >>> SUPPORT
