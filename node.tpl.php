@@ -6,7 +6,7 @@
   <?php print $picture ?>
 
   <?php if ($page == 0): ?>
-  <h2><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
+    <h2><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
   <?php endif; ?>
 
   <?php if ($submitted): ?>
@@ -18,21 +18,20 @@
   </div>
 
   <div class="meta">
-    <span class="float-left"></span><!--fixes ie float bug-->
 
     <?php if ($links): ?>
-    <div class="links">
-      <?php print $links; ?>
-    </div>
+      <div class="links">
+        <?php print $links; ?>
+      </div>
     <?php endif; ?>
 
     <?php if ($taxonomy): ?>
-    <div class="terms">
-      <?php print $terms ?>
-    </div>
+      <div class="terms">
+        <?php print $terms ?>
+      </div>
     <?php endif;?>
 
-    <div class="clear"></div>
+    <span class="clear"></span>
 
   </div>
 

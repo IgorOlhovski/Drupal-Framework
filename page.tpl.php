@@ -8,8 +8,7 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lte IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]--><!--For IE7 and lower-->
-    <!--[if lt IE 7]><?php print phptemplate_get_ie6_styles(); ?><![endif]--><!--For IE6 and lower-->
+    <!--[if lte IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]--><!--If Less Than or Equal (lte) to IE 7-->
   </head>
   <body<?php print phptemplate_body_class($left, $right); ?>>
 
@@ -36,34 +35,33 @@
 
           if ($logo || $site_title) {
             print '<h1><a href="'. check_url($front_page) .'" title="'. $site_title .'">';
-//            if ($logo) {
-//              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
-//            }
+            if ($logo) {
+              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
+            }
             print $site_html .'</a></h1>';
           }
         ?>
 
         <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
         <div class="clear"></div>
-      </div>
+      </div> <!-- /#header -->
 
       <div id="nav">
-
         <?php if (isset($primary_links)) : ?>
-        <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
-        <?php endif; ?>
-        <?php if (isset($secondary_links)) : ?>
-        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+          <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
         <?php endif; ?>
 
-      </div>
+        <?php if (isset($secondary_links)) : ?>
+          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+        <?php endif; ?>
+      </div> <!-- /#nav -->
 
       <div id="container">
 
         <?php if ($left): ?>
-        <div id="sidebar-left" class="sidebar">
-          <?php print $left ?>
-        </div> <!-- /#sidebar-left -->
+          <div id="sidebar-left" class="sidebar">
+            <?php print $left ?>
+          </div> <!-- /#sidebar-left -->
         <?php endif; ?>
 
         <div id="center">
@@ -75,25 +73,23 @@
           <?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
           <?php if ($show_messages && $messages): print $messages; endif; ?>
           <?php print $help; ?>
-
           <?php print $content ?>
-
         </div> <!-- /#center -->
   
         <?php if ($right): ?>
-        <div id="sidebar-right" class="sidebar">
-          <?php print $right ?>
-        </div> <!-- /#sidebar-right -->
+          <div id="sidebar-right" class="sidebar">
+            <?php print $right ?>
+          </div> <!-- /#sidebar-right -->
         <?php endif; ?>
 
         <div id="footer" class="clear">
           <?php print $footer_message . $footer ?>
           <?php print $feed_icons ?>
-        </div>
+        </div> <!-- /#footer -->
 
-      </div> <!-- /container -->
+      </div> <!-- /#container -->
       <span class="clear"></span>
-    </div>
+    </div> <!-- /#wrapper -->
 <!-- /layout -->
 
   <?php print $closure ?>

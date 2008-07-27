@@ -1,20 +1,21 @@
 @charset "utf-8";
 /* $Id$*/
-/* Drupal 6 Framework - Created by Andre Griffin
- * FOR IE 7 AND LOWER
+/**
+ * Drupal 6 Framework - Created by Andre Griffin
+ * For Internet Explorer 7 and under
  */
 
 /* DIRTY FIX FOR DEVEL THEMER BREAKING LAYOUT */
 .thmr_call {
-width:100%;
-text-align:center;
+  width:100%;
+  text-align:center;
 }
 
 .thmr_call .thmr_call {
-width:auto;
-text-align:left;
+  width:auto;
+  text-align:left;
 }
 
 .thmr_call #wrapper {
-text-align:left;
+  text-align:left;
 }
