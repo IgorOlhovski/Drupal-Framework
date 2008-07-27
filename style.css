@@ -1,5 +1,5 @@
 @charset "utf-8"; 
-/* $Id$*/
+/* $Id$ */
 /* Drupal 6 Framework - Created by Andre Griffin
 ----------------------------------------------------------------
 [Table of contents]
@@ -541,7 +541,7 @@ tr.drag-previous { background-color: #ffd; }
 tr.odd td.active { background-color: #d4e7f3; }
 tr.even td.active { background-color: #edf5fa; }
 td.region, td.module, td.container, td.category { background-color: #d4e7f3; border-bottom: 1px solid #b4d7f0; border-top: 1.5em solid #fff; color: #666; font-weight: 700; }
-tr: first-child td.region, tr: first-child td.module, tr: first-child td.container, tr: first-child td.category { border-top-width: 0; }
+tr:first-child td.region, tr:first-child td.module, tr:first-child td.container, tr:first-child td.category { border-top-width: 0; }
 tr.odd td.menu-disabled { background-color: #edf5fa; }
 tr.even td.menu-disabled { background-color: #fff; }
 tr.selected td a:link, tr.selected td a:visited, tr.selected td a:active { color: #d4e7f3; }

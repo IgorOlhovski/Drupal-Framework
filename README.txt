@@ -40,6 +40,9 @@ To enable current node to show in the breadcrumb trail, remove comment slashes o
 
 To use dark version of Framework, rename style.css to something like style-light.css (or just delete it). Then rename style-dark.css to style.css
 
+To add IE6 stylesheet, create a file in theme directory called fix-ie6.css.
+Place this under IE7 stylesheet in page.tpl: <!--[if lt IE 7]><?php print phptemplate_get_ie6_styles(); ?><![endif]--><!--If Less Than (lt) IE 7-->
+
 
 >>> SUPPORT
 
