@@ -92,6 +92,19 @@ function phptemplate_menu_local_tasks() {
 }
 
 /**
+ * Generates IE CSS links.
+ */
+function phptemplate_get_ie_styles() {
+  $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie.css" />';
+  return $iecss;
+}
+
+function phptemplate_get_ie6_styles() {
+  $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie6.css" />';
+  return $iecss;
+}
+
+/**
  * Adds even and odd classes to <li> tags in ul.menu lists
  */
 function phptemplate_menu_item($mid, $children = '', $leaf = true) {
@@ -101,3 +114,17 @@ $count++;
 return '<li class="' . ($leaf ? 'leaf' : ($children ? 'expanded' : 'collapsed')) .' ' . $zebra . '">'. menu_item_link($mid) . $children ."</li>\n";
 }
 
+/**
+* Fixes illegal duplicate html id's "edit-sumit".
+*/
+function phptemplate_submit($element) {
+  static $dupe_ids = array();
+  if (isset($dupe_ids[$element['#id']])) {
+    $dupe_ids[$element['#id']]++;
+    $element['#id'] = $element['#id'] .'-'. $dupe_ids[$element['#id']];
+  }
+  else {
+    $dupe_ids[$element['#id']] = 0;
+  }
+  return theme('button', $element);
+}

@@ -12,9 +12,9 @@
   <?php endif; ?>
 
   <?php if ($submitted): ?>
-  <span class="submitted">
-    <?php print t('!date — !username', array('!username' => theme('username', $node), '!date' => format_date($node->created))); ?>
-  </span>
+    <span class="submitted">
+      <?php print t('!date — !username', array('!username' => theme('username', $node), '!date' => format_date($node->created))); ?>
+    </span>
   <?php endif; ?>
 
   <div class="content">
@@ -22,21 +22,20 @@
   </div>
 
   <div class="meta">
-    <span class="float-left"></span><!--fixes ie float bug-->
 
     <?php if ($links): ?>
-    <div class="links">
-      <?php print $links; ?>
-    </div>
+      <div class="links">
+        <?php print $links; ?>
+      </div>
     <?php endif; ?>
     
     <?php if ($taxonomy): ?>
-    <div class="terms">
-      <?php print $terms ?>
-    </div>
+      <div class="terms">
+        <?php print $terms ?>
+      </div>
     <?php endif;?>
 
-    <div class="clear"></div>
+    <span class="clear"></span>
 
   </div>
 

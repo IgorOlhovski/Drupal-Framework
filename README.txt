@@ -9,21 +9,22 @@ Framework is a blank canvas for theme developers. Use Framework as a starting po
 Features
 
     * Framework gives general placement and formatting to basic Drupal elements
-    * Fixed width of 960px by default. Main column resizes between two-column and three-column layouts
+    * Fixed width of 960px by default
+    * Supports one, two, and three-column layouts
     * CSS file is highly organized, including a table of contents, color codes, section flags, alphabetical properties, etc.
     * Includes a list of CSS utility classes for easy content formatting
-    * W3C valid CSS 2.1 / XHTML 1.0 Strict
-    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3
+    * Complete em unit text sizing
     * Search in sidebar (as a block) and header (as a theme configuration option)
     * Clean and simplified code and file structure
-    * Works nicely in mobile browsers
     * The administration section is adapted from the default Garland theme
-    * Complete em unit text sizing
-    * Inverse color scheme style for dark sites
+    * Works nicely in mobile browsers
+    * W3C valid CSS 2.1 / XHTML 1.0 Strict
+    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3
+    * Includes inverse color scheme stylesheet for dark sites
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 
-Although is not necessarily intended, Framework can be used as is if you so choose.
+Although it is not necessarily intended, Framework can be used as is if you so choose.
 
 -------------------------------
 >>> INSTALL to sites/all/themes
@@ -31,9 +32,7 @@ Although is not necessarily intended, Framework can be used as is if you so choo
 
 >>> CONFIGURATION NOTES:
 
-To enable Drupal logo management in admin>themes>configure: remove comment slashes "//" on lines 38-40 in page.tpl.php
-
-To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 448 in style.css
+To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 508 in style.css
 
 To add regions, see: http://drupal.org/node/242107#comment-798428
 

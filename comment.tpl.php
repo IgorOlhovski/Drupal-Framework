@@ -2,17 +2,16 @@
 // $Id$
 ?>
 <div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ($comment->status == COMMENT_NOT_PUBLISHED) ? ' comment-unpublished' : ''; print ' '. $zebra; ?>">
-  <div class="comment-bar">
 
+  <div class="comment-bar">
     <?php if ($submitted): ?>
-    <span class="submitted"><?php print t('by !username on !date', array('!username' => theme('username', $comment), '!date' => format_date($comment->timestamp))); ?></span>
+      <span class="submitted"><?php print t('by !username on !date', array('!username' => theme('username', $comment), '!date' => format_date($comment->timestamp))); ?></span>
     <?php endif; ?>
 
     <?php if ($comment->new) : ?>
-    <a id="new"></a>
-    <span class="new"><?php print drupal_ucfirst($new) ?></span>
+      <a id="new"></a>
+      <span class="new"><?php print drupal_ucfirst($new) ?></span>
     <?php endif; ?>
-
   </div>
 
   <?php print $picture ?>
@@ -24,9 +23,9 @@
   </div>
 
   <?php if ($links): ?>
-  <div class="links">
-    <?php print $links ?>
-  </div>
+    <div class="links">
+      <?php print $links ?>
+    </div>
   <?php endif; ?>
 
 </div>
