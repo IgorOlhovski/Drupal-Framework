@@ -5,7 +5,7 @@
 
   <div class="comment-bar">
     <?php if ($submitted): ?>
-      <span class="submitted"><?php print t('by !username on !date', array('!username' => theme('username', $comment), '!date' => format_date($comment->timestamp))); ?></span>
+      <span class="submitted"><?php print t('by <strong>!username</strong> | !date', array('!username' => theme('username', $comment), '!date' => format_date($comment->timestamp))); ?></span>
     <?php endif; ?>
 
     <?php if ($comment->new) : ?>

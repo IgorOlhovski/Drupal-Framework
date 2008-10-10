@@ -13,7 +13,7 @@
 
   <?php if ($submitted): ?>
     <span class="submitted">
-      <?php print t('!date — !username', array('!username' => theme('username', $node), '!date' => format_date($node->created))); ?>
+      <?php print t('by <strong>!username</strong> | !date', array('!username' => theme('username', $node), '!date' => format_date($node->created))); ?>
     </span>
   <?php endif; ?>
 
@@ -21,22 +21,24 @@
     <?php print $content ?>
   </div>
 
-  <div class="meta">
+  <?php if ($links||$taxonomy){ ?>
+    <div class="meta">
 
-    <?php if ($links): ?>
-      <div class="links">
-        <?php print $links; ?>
-      </div>
-    <?php endif; ?>
-    
-    <?php if ($taxonomy): ?>
-      <div class="terms">
-        <?php print $terms ?>
-      </div>
-    <?php endif;?>
+      <?php if ($links): ?>
+        <div class="links">
+          <?php print $links; ?>
+        </div>
+      <?php endif; ?>
 
-    <span class="clear"></span>
+      <?php if ($taxonomy): ?>
+        <div class="terms">
+          <?php print $terms ?>
+        </div>
+      <?php endif;?>
 
-  </div>
+      <span class="clear"></span>
+
+    </div>
+  <?php }?>
 
 </div>

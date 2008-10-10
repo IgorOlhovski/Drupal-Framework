@@ -20,7 +20,6 @@ Features
     * Works nicely in mobile browsers
     * W3C valid CSS 2.1 / XHTML 1.0 Strict
     * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3
-    * Includes inverse color scheme stylesheet for dark sites
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 
@@ -32,7 +31,7 @@ Although it is not necessarily intended, Framework can be used as is if you so c
 
 >>> CONFIGURATION NOTES:
 
-To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 508 in style.css
+To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 518 in style.css
 
 To add regions, see: http://drupal.org/node/242107#comment-798428
 

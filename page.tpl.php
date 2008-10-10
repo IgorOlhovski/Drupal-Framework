@@ -16,30 +16,18 @@
     <div id="wrapper">
       <div id="header">
         <?php print $header; ?>
-
-        <?php
-          // Prepare header
-          $site_fields = array();
+        <?php print '<h1><a href="'. check_url($base_path) .'" title="'. $site_name .'">';
+          if ($logo) {
+            print '<img src="'. check_url($logo) .'" alt="'. $site_name .'" id="logo" />';
+          }
           if ($site_name) {
-            $site_fields[] = check_plain($site_name);
+            print check_plain($site_name);
           }
           if ($site_slogan) {
-            $site_fields[] = check_plain($site_slogan);
+            print '<span id="slogan">'. $site_slogan .'</span>';
           }
-          $site_title = implode(' ', $site_fields);
-          $site_fields[0] = '<span>'. $site_name .'</span>';
-          $site_fields[1] = '<span id="slogan">'. $site_slogan .'</span>';
-          $site_html = implode(' ', $site_fields);
-
-          if ($logo || $site_title) {
-            print '<h1><a href="'. check_url($base_path) .'" title="'. $site_title .'">';
-            if ($logo) {
-              print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
-            }
-            print $site_html .'</a></h1>';
-          }
-        ?>
-
+          print '</a></h1>';
+		?>   
         <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
         <div class="clear"></div>
       </div> <!-- /#header -->
@@ -48,7 +36,6 @@
         <?php if (isset($primary_links)) : ?>
           <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
         <?php endif; ?>
-
         <?php if (isset($secondary_links)) : ?>
           <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
         <?php endif; ?>
