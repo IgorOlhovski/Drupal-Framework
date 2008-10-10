@@ -8,4 +8,3 @@ engine = phptemplate
 stylesheets[all][] = style.css
 stylesheets[print][] = print.css
 
-

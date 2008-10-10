@@ -17,22 +17,24 @@
     <?php print $content ?>
   </div>
 
-  <div class="meta">
+  <?php if ($links||$taxonomy){ ?>
+    <div class="meta">
 
-    <?php if ($links): ?>
-      <div class="links">
-        <?php print $links; ?>
-      </div>
-    <?php endif; ?>
+      <?php if ($links): ?>
+        <div class="links">
+          <?php print $links; ?>
+        </div>
+      <?php endif; ?>
 
-    <?php if ($taxonomy): ?>
-      <div class="terms">
-        <?php print $terms ?>
-      </div>
-    <?php endif;?>
+      <?php if ($taxonomy): ?>
+        <div class="terms">
+          <?php print $terms ?>
+        </div>
+      <?php endif;?>
 
-    <span class="clear"></span>
+      <span class="clear"></span>
 
-  </div>
+    </div>
+  <?php }?>
 
 </div>

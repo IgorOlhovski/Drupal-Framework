@@ -74,7 +74,7 @@ function phptemplate_menu_local_tasks() {
 }
 
 function phptemplate_comment_submitted($comment) {
-  return t('by !username on !datetime',
+  return t('by <strong>!username</strong> | !datetime',
     array(
       '!username' => theme('username', $comment),
       '!datetime' => format_date($comment->timestamp)
@@ -82,7 +82,7 @@ function phptemplate_comment_submitted($comment) {
 }
 
 function phptemplate_node_submitted($node) {
-  return t('!datetime — !username',
+  return t('by <strong>!username</strong> | !datetime',
     array(
       '!username' => theme('username', $node),
       '!datetime' => format_date($node->created),

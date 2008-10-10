@@ -16,7 +16,7 @@
   <?php print $picture ?>
 
   <h3><?php print $title ?></h3>
-
+  
   <div class="content">
     <?php print $content ?>
     <?php if ($signature): ?>
