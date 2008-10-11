@@ -16,18 +16,18 @@
     <div id="wrapper">
       <div id="header">
         <?php print $header; ?>
-        <?php print '<h1><a href="'. check_url($front_page) .'" title="'. $site_name .'">';
-          if ($logo) {
-            print '<img src="'. check_url($logo) .'" alt="'. $site_name .'" id="logo" />';
-          }
-          if ($site_name) {
-            print check_plain($site_name);
-          }
-          if ($site_slogan) {
-            print '<span id="slogan">'. $site_slogan .'</span>';
-          }
-          print '</a></h1>';
-		?>     
+          <?php print '<h1><a href="'. check_url($front_page) .'" title="'. check_plain($site_name) .'">';
+            if ($logo) {
+              print '<img src="'. check_url($logo) .'" alt="'. check_plain($site_name) .'" id="logo" />';
+            }
+            if ($site_name) {
+              print '<span id="name">'. check_plain($site_name) .'</span>';
+            }
+            if ($site_slogan) {
+              print '<span id="slogan">'. check_plain($site_slogan) .'</span>';
+            }
+            print '<span class="clear"></span></a></h1>';
+          ?>
         <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
         <div class="clear"></div>
       </div> <!-- /#header -->

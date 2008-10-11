@@ -31,7 +31,7 @@ Although it is not necessarily intended, Framework can be used as is if you so c
 
 >>> CONFIGURATION NOTES:
 
-To disable zebra coloring from sidebar menues: remove comment star and slash "*/" on line 531 in style.css
+To enable legacy list/menu support, see line 532 of style.css
 
 To add regions, see: http://drupal.org/node/242107#comment-798428
 
