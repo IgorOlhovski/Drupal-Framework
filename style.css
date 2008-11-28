@@ -180,28 +180,29 @@ body.sidebar-right #center {
 #header {
   margin: 0;
   padding: 10px 0;
-  position: relative;
+}
+
+#header h1 {
+  float: left;
 }
 
 #header #logo {
   float: left;
-  padding: 4px 10px 0 0;
+  padding: 15px 10px 0 0;
 }
 
-#header #name {
-  display:block;
+#header #sitename {
+  display: block;
 }
 
-#header #slogan {
+#header #siteslogan {
   display: block;
   font-size: .75em;
 }
 
 #search-theme-form {
-  margin: 3em 0 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  float: right;
+  margin: 2.5em 0 0;
 }
 
 #search-theme-form .form-button, #search-theme-form .form-submit {
@@ -289,6 +290,11 @@ span.submitted {
   margin: -5px 0 4px;
 }
 
+.node .picture {
+  float: left;
+  margin: .3em .5em .1em 0;
+}
+
 .meta {
   background: #edf5fa;
   border-bottom: 1px solid #b4d7f0;
@@ -323,18 +329,24 @@ span.submitted {
 }
 
 .pager a:link, .pager a:visited, .pager strong.pager-current {
+  background-color: #f5f5f5;
   border: 1px solid #ccc;
+  color: #999;
+  font-size: .8333em;
+  font-weight: 700;
   margin: .3em .2em;
   padding: .3em .5em;
 }
 
 .pager a:hover, .pager a:active {
-  background-color: #edf5fa;
+  border-color: 1px solid #999;
+  color: #666;
 }
 
 .pager strong.pager-current {
-  background-color: #d4e7f3;
-  color: #069;
+  background-color: #069;
+  border: 1px solid #069;
+  color: #fff;
 }
 
 /**
@@ -370,6 +382,11 @@ span.submitted {
 
 .comment .content {
   padding: 5px;
+}
+
+.comment .picture {
+  float: right;
+  margin: .3em 0 .1em .3em;
 }
 
 .comment h3 {
@@ -413,6 +430,11 @@ span.submitted {
  */
 .block {
   margin: 0 0 10px;
+}
+
+.block h3 {
+  font-size: 1.6667em;
+  margin: .75em 0 .5em;
 }
 
 #user-login-form .item-list ul li {

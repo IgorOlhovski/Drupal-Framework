@@ -16,18 +16,22 @@
     <div id="wrapper">
       <div id="header">
         <?php print $header; ?>
-          <?php print '<h1><a href="'. check_url($base_path) .'" title="'. check_plain($site_name) .'">';
-            if ($logo) {
-              print '<img src="'. check_url($logo) .'" alt="'. check_plain($site_name) .'" id="logo" />';
-            }
-            if ($site_name) {
-              print '<span id="name">'. check_plain($site_name) .'</span>';
-            }
-            if ($site_slogan) {
-              print '<span id="slogan">'. check_plain($site_slogan) .'</span>';
-            }
-            print '<span class="clear"></span></a></h1>';
-          ?>
+          
+        <?php if ($logo): ?>
+          <a href="<?php print check_url($base_path); ?>" title="<?php print check_plain($site_name); ?>">
+            <img src="<?php print check_url($logo); ?>" alt="<?php print check_plain($site_name); ?>" id="logo" />
+          </a>
+        <?php endif; ?>
+        <?php print '<h1><a href="'. check_url($base_path) .'" title="'. check_plain($site_name) .'">';
+          if ($site_name) {
+            print '<span id="sitename">'. check_plain($site_name) .'</span>';
+          }
+          if ($site_slogan) {
+            print '<span id="siteslogan">'. check_plain($site_slogan) .'</span>';
+          }
+          print '</a></h1>';
+        ?>
+        
         <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
         <div class="clear"></div>
       </div> <!-- /#header -->

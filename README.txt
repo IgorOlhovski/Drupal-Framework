@@ -4,7 +4,7 @@ Drupal 5 Framework theme
 Created by Andre Griffin > user andregriffin
 
 
-Framework is a blank canvas for theme developers. Use Framework as a starting point to help facilitate your theme development.
+Framework is a blank canvas for theme developers. Use Framework as a user friendly starting point to help facilitate your theme development.
 
 Features
 
@@ -19,11 +19,15 @@ Features
     * The administration section is adapted from the default Garland theme
     * Works nicely in mobile browsers
     * W3C valid CSS 2.1 / XHTML 1.0 Strict
-    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3
+    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3, Chrome
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 
 Although it is not necessarily intended, Framework can be used as is if you so choose.
+
+Development sites:
+http://d6.andregriffin.com
+http://d5.andregriffin.com
 
 -------------------------------
 >>> INSTALL to sites/all/themes
@@ -31,13 +35,11 @@ Although it is not necessarily intended, Framework can be used as is if you so c
 
 >>> CONFIGURATION NOTES:
 
-To enable legacy list/menu support, see line 519 of style.css
+To enable legacy list/menu support, see line 541 of style.css
 
 To add regions, see: http://drupal.org/node/242107#comment-798428
 
 To enable current node to show in the breadcrumb trail, remove comment slashes on line 37 of template.php
-
-To use dark version of Framework, rename style.css to something like style-light.css (or just delete it). Then rename style-dark.css to style.css
 
 To add IE6 stylesheet, create a file in theme directory called fix-ie6.css.
 Place this under IE7 stylesheet in page.tpl: <!--[if lt IE 7]><?php print phptemplate_get_ie6_styles(); ?><![endif]--><!--If Less Than (lt) IE 7-->

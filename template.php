@@ -70,6 +70,11 @@ function _phptemplate_variables($hook, $vars) {
     if (module_exists('color')) {
       _color_page_alter($vars);
     }
+		
+    // Hook into page_title.module
+    if (module_exists('page_title')) {
+      $vars['head_title'] = page_title_page_get_title();
+    }
     return $vars;
   }
   return array();
