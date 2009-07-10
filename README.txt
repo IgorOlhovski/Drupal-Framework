@@ -13,18 +13,20 @@ Features
     * Supports one, two, and three-column layouts
     * CSS file is highly organized, including a table of contents, color codes, section flags, alphabetical properties, etc.
     * Includes a list of CSS utility classes for easy content formatting
-    * Complete em unit text sizing
+    * Em unit text sizing with vertical rhythm
     * Search in sidebar (as a block) and header (as a theme configuration option)
-    * Clean and simplified code and file structure
-    * The administration section is clean and well formated
+    * Clean and simplified code, file structure, and administration section
     * Included support for Dynamic Persistent Menu
     * Works nicely in mobile browsers
-    * W3C valid CSS 2.1 / XHTML 1.0 Strict
-    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 3, Chrome
+    * W3C valid CSS 2.1 / XHTML 1.1
+    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 4, Chrome
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 
 Although it is not necessarily intended, Framework can be used as is if you so choose.
+
+Framework is actively developed and supported on my own time. If you would like to say thanks, please consider donating via:
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=1532730
 
 Development sites:
 http://d6.andregriffin.com
@@ -38,7 +40,7 @@ http://d5.andregriffin.com
 
 To add regions, see: http://drupal.org/node/242107#comment-798428
 
-To enable current node to show in the breadcrumb trail, remove comment slashes on line 37 of template.php
+To enable current node to show in the breadcrumb trail, remove comment slashes on line 41 of template.php
 
 To add IE6 stylesheet, create a file in theme directory called fix-ie6.css.
 Place this under IE7 stylesheet in page.tpl: <!--[if lt IE 7]><?php print phptemplate_get_ie6_styles(); ?><![endif]--><!--If Less Than (lt) IE 7-->

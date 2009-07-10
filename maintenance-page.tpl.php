@@ -8,12 +8,13 @@
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lte IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]--><!--If Less Than or Equal (lte) to IE 7-->
+    <!--[if lte IE 7]><?php print framework_get_ie_styles(); ?><![endif]--><!--If Less Than or Equal (lte) to IE 7-->
   </head>
-  <body<?php print phptemplate_body_class($left, $right); ?>>
-<!-- Layout -->
-    <div id="wrapper">
-      <div id="header">
+  <body<?php print framework_body_class($left, $right); ?>>
+    <!-- Layout -->
+    <div class="container showgrid">
+  
+      <div id="header" class="clearfix">
         <?php print $header; ?>
 
         <?php if ($logo): ?>
@@ -21,18 +22,18 @@
             <img src="<?php print check_url($logo); ?>" alt="<?php print check_plain($site_name); ?>" id="logo" />
           </a>
         <?php endif; ?>
-        <?php print '<h1><a href="'. check_url($front_page) .'" title="'. check_plain($site_name) .'">';
-          if ($site_name) {
-            print '<span id="sitename">'. check_plain($site_name) .'</span>';
-          }
-          if ($site_slogan) {
-            print '<span id="siteslogan">'. check_plain($site_slogan) .'</span>';
-          }
-          print '</a></h1>';
-        ?>
 
+        <div id="sitename">
+					<?php if ($site_name): ?>
+            <h1><a href="<?php print check_url($front_page); ?>" title="<?php print check_plain($site_name); ?>"><?php print check_plain($site_name); ?></a></h1>
+          <?php endif; ?>
+  
+          <?php if ($site_slogan): ?>
+            <span id="siteslogan"><?php print check_plain($site_slogan); ?></span>
+          <?php endif; ?>
+        </div> <!-- /#sitename -->
+      
         <?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
-        <div class="clear"></div>
       </div> <!-- /#header -->
 
       <div id="nav">
@@ -40,7 +41,7 @@
           <?php print $nav ?>
         <?php endif; ?>
 
-        <?php if (!$nav): ?><!-- if block in $nav, removes default $primary and $secondary links -->
+        <?php if (!$nav): ?> <!-- if block in $nav, overrides default $primary and $secondary links -->
 
           <?php if (isset($primary_links)) : ?>
             <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
@@ -52,36 +53,32 @@
         <?php endif; ?>
       </div> <!-- /#nav -->
 
-      <div id="container">
+			<?php if ($left): ?>
+        <div id="sidebar-left" class="sidebar">
+          <?php print $left ?>
+        </div> <!-- /#sidebar-left -->
+      <?php endif; ?>
 
-        <?php if ($left): ?>
-          <div id="sidebar-left" class="sidebar">
-            <?php print $left ?>
-          </div> <!-- /#sidebar-left -->
-        <?php endif; ?>
-
-        <div id="center">
-          <?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
-          <?php print $help; ?>
-          <?php print $messages; ?>
-          <?php print $content ?>
-        </div> <!-- /#center -->
+      <div id="main">
+				<?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
+        <?php print $help; ?>
+        <?php print $messages; ?>
+        <?php print $content ?>
+      </div> <!-- /#main -->
   
-        <?php if ($right): ?>
-          <div id="sidebar-right" class="sidebar">
-            <?php print $right ?>
-          </div> <!-- /#sidebar-right -->
-        <?php endif; ?>
+      <?php if ($right): ?>
+        <div id="sidebar-right" class="sidebar">
+          <?php print $right ?>
+        </div> <!-- /#sidebar-right -->
+      <?php endif; ?>
 
-        <div id="footer" class="clear">
-          <?php print $footer_message . $footer ?>
-          <?php print $feed_icons ?>
-        </div> <!-- /#footer -->
+      <div id="footer" class="clear">
+        <?php print $footer_message . $footer ?>
+        <?php print $feed_icons ?>
+      </div> <!-- /#footer -->
 
-      </div> <!-- /#container -->
-      <span class="clear"></span>
-    </div> <!-- /#wrapper -->
-<!-- /layout -->
+    </div> <!-- /.container -->
+    <!-- /layout -->
 
   <?php print $closure ?>
 

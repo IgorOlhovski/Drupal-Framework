@@ -8,6 +8,7 @@
   <?php endif;?>
 
   <div class="content">
+    <?php print $edit_links; ?>
     <?php print $block->content ?>
   </div>
 

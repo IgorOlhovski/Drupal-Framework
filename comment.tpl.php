@@ -15,7 +15,7 @@
 
   <?php print $picture ?>
 
-  <h3><?php print $title ?></h3>
+  <h3 class="comment-title"><?php print $title ?></h3> <!--redundant comment titles hidden by css-->
 
   <div class="content">
     <?php print $content ?>

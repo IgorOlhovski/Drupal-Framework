@@ -17,7 +17,7 @@
     <?php print $content ?>
   </div>
 
-  <div class="meta">
+  <div class="meta clearfix">
 
     <?php if ($links): ?>
       <div class="links">
@@ -27,11 +27,9 @@
 
     <?php if ($taxonomy): ?>
       <div class="terms">
-        <span>Tags:</span><?php print $terms ?>
+        <span><?php print t('Tags:') ?></span><?php print $terms ?>
       </div>
     <?php endif;?>
-
-    <span class="clear"></span>
 
   </div>
 
