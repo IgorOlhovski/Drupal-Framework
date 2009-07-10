@@ -637,10 +637,11 @@ body.admin dd{color:#898989;font-size:.9167em;line-height:1.636364em;}
 .block-region {font-size:0.8333em;line-height:1.5em;margin:0;padding:0.15em 0.5em;}
 
 /* tables */
+#forum thead th {border-bottom:3px solid #ccc;}
 #forum td.posts,#forum td.topics,#forum td.replies,#forum td.pager{text-align:left;}
 #forum tr td.forum{background-position:4px 9px;}
 .forum-topic-navigation{background:#eee;border:none;border-bottom:1px solid #ccc;margin-bottom:1em;padding:5px;}
-body.admin table{border-collapse:collapse;margin:0 0 1.4em;width:100%;}
+body.admin table{margin:0 0 1.4em;width:100%;}
 body.admin thead th{border-bottom:2px solid #ccc;font-weight:700;padding:0 1em 0 0;}
 body.admin tbody{border-top:none;}
 body.admin td,body.admin th{padding:.3em .5em;vertical-align:middle;}
