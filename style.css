@@ -113,7 +113,7 @@ a:focus {
 }
 
 a:hover, a:active, li a.active {
-  color: #39c;
+  color: #069;
   outline: none;
   text-decoration: underline;
 }
@@ -218,6 +218,8 @@ body.sidebar-right #main {
   margin: 1em 0 1.85em;
 }
 
+
+/* removes "Search this site:" label from search forms */
 div#edit-search-theme-form-1-wrapper label, 
 div#edit-search-block-form-1-wrapper label {
   display: none;
@@ -228,7 +230,7 @@ div#edit-search-block-form-1-wrapper label {
  */
 ul.links li {
   background: none;
-  margin: 0 10px 0 0;
+  margin: 0 1em 0 0;
   padding: 0;
 }
 
@@ -243,7 +245,7 @@ ul.links li {
 #nav ul.primary-links, 
 #nav ul.dynamic-persistent-menu-menu {
   background: #eee;
-  font-weight: 700;
+  font-weight: bold;
   margin: 0;
   padding: 0 .5em;
 }
@@ -305,7 +307,6 @@ ul.links li {
   display: block !important;
 }
 
-/* negative margin keeps from pushing node h2 titles down */
 .breadcrumb {
   color: #ccc;
   padding: 0;
@@ -352,12 +353,12 @@ span.submitted {
 
 .meta div.links ul.links li {
   float: left;
-  padding: 0 10px 0 0;
+  padding: 0 1em 0 0;
 }
 
 .meta div.terms ul.links li {
   float: left;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 1em;
 }
 
 .node_read_more {
@@ -365,10 +366,6 @@ span.submitted {
 }
 
 /* pagination */
-.item-list ul.pager {
-  margin: 0 0 1.5em;
-}
-
 .item-list ul.pager li {
   margin: 0;
   padding: 0;
@@ -377,20 +374,20 @@ span.submitted {
 .item-list ul.pager li a:link, 
 .item-list ul.pager li a:visited, 
 .item-list ul.pager li.pager-current {
-  color: #999;
-  font-size: .8333em;
-  font-weight: 700;
-  margin: .3em .1em;
-  padding: .3em .5em;
+  margin: 0;
+  padding: 0 .2em;
+  text-decoration: none;
 }
 
 .item-list ul.pager li a:hover, 
 .item-list ul.pager li a:active {
-  color: #666;
+  text-decoration: underline;
 }
 
 .item-list ul.pager li.pager-current {
-  color: #222;
+  border-bottom: 2px solid;
+  color: #069;
+  font-weight: bold;
 }
 
 /**
@@ -461,11 +458,6 @@ span.submitted {
   padding: 0;
 }
 
-/* search block */
-#search-block-form input {
-  margin: 0 0 1em;
-}
-
 /* block configuration links */
 div.block div.edit {
   background-color: #f5f5f5;
@@ -479,16 +471,24 @@ div.block div.edit {
   z-index: 40;
 }
 
-div.block div.edit a {
-  color: #000;
-  margin-right: 10px;
-}
-
 div.block:hover div.edit {
   display:block;
 }
 
+div.block div.edit a {
+  color: #999;
+  margin-right: 10px;
+}
+
+div.block div.edit:hover a {
+  color: #000;
+}
+
 /* views configuration links */
+div.view {
+  position: relative;
+}
+
 div.view div.views-hide-hover,
 div.view:hover div.views-hide,
 div.view div.views-admin-links,
@@ -503,8 +503,12 @@ div.view div.views-admin-links:hover {
   padding-left: 10px;
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 0;
   width: auto;
+}
+
+div.view div.views-admin-links li a {
+  color: #999;
 }
 
 /**
@@ -522,7 +526,7 @@ div.view div.views-admin-links:hover {
   top: 1.416667em;
 }
 
-/* Support Drupal */
+/* support drupal */
 #footer #block-system-0 {
   position: absolute;
   right: 25px;
@@ -623,7 +627,7 @@ ul.secondary li{background:none;border:none;display:inline;line-height:2em;margi
 ul.primary li a,ul.primary li.active a,ul.primary li a:hover,ul.primary li a:visited{background:none;border:0;margin:0;padding:0 1em;text-decoration:none;}
 ul.secondary li a,ul.secondary li a:visited{background:none;border:0;margin:0;padding:0;text-decoration:none;}
 ul.secondary li.active a,ul.secondary li a:hover{text-decoration:underline;}
-ul.primary li.active a,ul.secondary li.active a{font-weight:700;text-decoration:none;}
+ul.primary li.active a,ul.secondary li.active a{font-weight:bold;text-decoration:none;}
 
 /* admin styling */
 div.admin,div.admin .left,div.admin .right,div.admin-panel,div.admin-panel .body,div.admin .expert-link{margin:0;padding:0;}
@@ -642,7 +646,7 @@ body.admin dd{color:#898989;font-size:.9167em;line-height:1.636364em;}
 #forum tr td.forum{background-position:4px 9px;}
 .forum-topic-navigation{background:#eee;border:none;border-bottom:1px solid #ccc;margin-bottom:1em;padding:5px;}
 body.admin table{margin:0 0 1.4em;width:100%;}
-body.admin thead th{border-bottom:2px solid #ccc;font-weight:700;padding:0 1em 0 0;}
+body.admin thead th{border-bottom:2px solid #ccc;font-weight:bold;padding:0 1em 0 0;}
 body.admin tbody{border-top:none;}
 body.admin td,body.admin th{padding:.3em .5em;vertical-align:middle;}
 body.admin tr.even,body.admin tr.odd,body.admin tbody th{border:solid #ccc;border-width:1px 0;}
@@ -652,7 +656,7 @@ body.admin tr.odd,body.admin tr.info{background-color:#eee;}
 body.admin tr.even{background-color:#f5f5f5;}
 body.admin tr.drag{background-color:#fffff0;}
 body.admin tr.drag-previous{background-color:#ffd;}
-body.admin td.region,body.admin td.module,body.admin td.container,body.admin td.category{background-color:#ddd;border-bottom:1px solid #ccc;border-top:1em solid #fff;color:#666;font-weight:700;}
+body.admin td.region,body.admin td.module,body.admin td.container,body.admin td.category{background-color:#ddd;border-bottom:1px solid #ccc;border-top:1em solid #fff;color:#666;font-weight:bold;}
 body.admin tr:first-child td.region,body.admin tr:first-child td.module,body.admin tr:first-child td.container,body.admin tr:first-child td.category{border-top-width:0;}
 body.admin table.sticky-header{margin:0 0 0 1px;z-index:1;}
 body.admin table.sticky-header th{padding-top:.5em;}

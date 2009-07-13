@@ -8,18 +8,20 @@ Framework is a blank canvas for theme developers. Use Framework as a user friend
 
 Features
 
-    * Framework gives general placement and formatting to basic Drupal elements
-    * Fixed width of 960px by default
-    * Supports one, two, and three-column layouts
-    * CSS file is highly organized, including a table of contents, color codes, section flags, alphabetical properties, etc.
-    * Includes a list of CSS utility classes for easy content formatting
-    * Em unit text sizing with vertical rhythm
-    * Search in sidebar (as a block) and header (as a theme configuration option)
-    * Clean and simplified code, file structure, and administration section
-    * Included support for Dynamic Persistent Menu
-    * Works nicely in mobile browsers
-    * W3C valid CSS 2.1 / XHTML 1.1
-    * Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 4, Chrome
+		* Framework gives general placement and formatting to basic Drupal elements
+		* Supports one, two, and three-column layouts
+		* Set to a 24 column grid of 950px
+		* CSS file is highly organized, including a table of contents, section flags, alphabetical properties, etc.
+		* Includes a CSS reset and a list of CSS utility classes for easy content formatting
+		* Em unit text sizing with vertical rhythm
+		* Search in sidebar (as a block) and header (as a theme configuration option)
+		* Included support for Dynamic Persistent Menu
+		* Quick block and view editing links
+		* Clean and simplified code, file structure, and administration section
+		* Works nicely in mobile browsers
+		* W3C valid CSS 2.1 / XHTML 1.1
+		* Verified and tested with Firefox 3, Firefox 2, IE7, IE6, Safari 4, Chrome
+
 
 Framework is not intended to be everything to everyone. It is built with simplicity and ease of modification in mind.
 

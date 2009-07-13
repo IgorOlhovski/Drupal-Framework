@@ -1,18 +1,18 @@
 <?php
 // $Id$
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" >
   <head>
     <title><?php print $head_title ?></title>
     <?php print $head ?>
     <?php print $styles ?>
     <?php print $scripts ?>
-    <!--[if lte IE 7]><?php print framework_get_ie_styles(); ?><![endif]--><!--If Less Than or Equal (lte) to IE 7-->
+    <!--[if lte IE 7]><?php print framework_get_ie_styles(); ?><![endif]--> <!--If Less Than or Equal (lte) to IE 7-->
   </head>
   <body<?php print framework_body_class($left, $right); ?>>
     <!-- Layout -->
-    <div class="container showgrid">
+    <div class="container"> <!-- add "showgrid" class to display grid -->
   
       <div id="header" class="clearfix">
         <?php print $header; ?>
