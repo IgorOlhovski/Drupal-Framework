@@ -1,0 +1,21 @@
+; $Id$
+name = Framework
+description = Framework is a blank canvas for theme developers. Use Framework as a starting point to facilitate your theme development.
+package = Core
+version = VERSION
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = style.css
+
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[nav] = Navigation
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[footer] = Footer
+regions[indicators] = Indicators
+regions_hidden[] = indicators
