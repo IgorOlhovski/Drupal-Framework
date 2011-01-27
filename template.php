@@ -40,7 +40,7 @@ function framework_preprocess_page(&$vars) {
     $vars['primary_menu'] = theme('links__system_main_menu', array(
       'links' => $vars['main_menu'],
       'attributes' => array(
-        'class' => array('links', 'main-menu'),
+        'class' => array('links', 'main-menu', 'clearfix'),
       ),
       'heading' => array(
         'text' => t('Main menu'),
@@ -56,7 +56,7 @@ function framework_preprocess_page(&$vars) {
     $vars['secondary_menu'] = theme('links__system_secondary_menu', array(
       'links' => $vars['secondary_menu'],
       'attributes' => array(
-        'class' => array('links', 'secondary-menu'),
+        'class' => array('links', 'secondary-menu', 'clearfix'),
       ),
       'heading' => array(
         'text' => t('Secondary menu'),

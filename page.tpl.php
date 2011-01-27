@@ -36,19 +36,17 @@
         <?php endif; ?>
       <?php endif; ?>
     </div> <!-- /#branding -->
-    <?php if ($secondary_menu): ?>
-      <nav id="secondary-menu" class="clearfix"><?php print $secondary_menu; ?></nav>
-    <?php endif; ?>
     <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
-  <nav id="primary-menu" role="navigation" class="clearfix">
+  <nav id="navigation" role="navigation" class="clearfix">
     <?php if ($page['nav']): ?>
       <?php print render($page['nav']); ?>
     <?php endif; ?>
 
     <?php if (!$page['nav']): ?> <!--if block in nav region, overrides default $primary_nav and $secondary_nav-->
       <?php if ($primary_menu): print $primary_menu; endif; ?>
+      <?php if ($secondary_menu): print $secondary_menu; endif; ?>
     <?php endif; ?>
   </nav> <!-- /#nav -->
 

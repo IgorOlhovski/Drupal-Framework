@@ -244,33 +244,39 @@ body.sidebar-second #sidebar-second {
 /**
  * 6.NAVIGATION
  */
-#primary-menu {
+#navigation {
   margin-bottom: 1.5em;
   padding: 0;
 }
 
-#primary-menu ul li {
+#navigation ul.main-menu {
+  background: #ddd;
+}
+
+#navigation ul.main-menu li {
   margin: 0;
 }
 
-#primary-menu ul li a {
+#navigation ul.main-menu li a {
   display: block;
   float: left;
-  line-height: 4.5em;
+  line-height: 3em;
   padding: 0 1em;
 }
 
-#secondary-menu {
-  float: right;
-  line-height: 1.5em;
-  margin: 1.5em 0;
+ul.secondary-menu {
+  background: #eee;
 }
 
 ul.secondary-menu li {
+  margin: 0;
+}
+
+ul.secondary-menu li a {
   display: block;
   float: left;
-  list-style-image: none;
-  margin: 0 0 0 1em;
+  line-height: 3em;
+  padding: 0 1em;
 }
 
 .breadcrumb {
