@@ -35,7 +35,6 @@ function framework_breadcrumb($variables) {
  * Override or insert variables into the page template.
  */
 function framework_preprocess_page(&$vars) {
-  $vars['tabs'] = menu_secondary_local_tasks();
   if (isset($vars['main_menu'])) {
     $vars['primary_menu'] = theme('links__system_main_menu', array(
       'links' => $vars['main_menu'],
@@ -68,6 +67,28 @@ function framework_preprocess_page(&$vars) {
   else {
     $vars['secondary_menu'] = FALSE;
   }
+}
+
+/**
+ * Duplicate of theme_menu_local_tasks() but adds clearfix to tabs.
+ */
+function framework_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="tabs primary clearfix">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="tabs secondary clearfix">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
 }
 
 /**
