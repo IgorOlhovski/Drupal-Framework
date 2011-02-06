@@ -1,7 +1,6 @@
-@charset "utf-8"; 
 /* $Id$ */
 /* Drupal 7 Framework - Created by André Griffin
-----------------------------------------------------------------
+------------------------------------------------
 [Table of contents]
 
  0.Reset
@@ -17,21 +16,21 @@
 10.Footer
 11.CSS Support
 
-[Font sizes - based on 75%/12px body]
+[Font sizes - based on 75%/12px body font-size]
 36px = 3em
 30px = 2.5em
 24px = 2em
 18px = 1.5em
 16px = 1.333333em
+15px = 1.2em
 14px = 1.1667em
 12px = 1em
 11px = .9167em
 10px = .8333em
 
-Equasion for font sizing: 
+Equation for font sizing: 
 -Desired px ÷ Default (or parent) px = em size
-
-----------------------------------------------------------------*/
+------------------------------------------------*/
 
 /**
  * 0.RESET 
@@ -84,8 +83,10 @@ h5 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: .8333em;
   font-weight: bold;
+  line-height: 1.8em;
+  margin-bottom: 1.8em;
 }
 
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
@@ -116,13 +117,17 @@ a:hover, a:active, li a.active {
   text-decoration: underline;
 }
 
-table {
-  width: 100%;
-}
-
-table td {
-  vertical-align:middle;
-}
+/* Common Styling */
+li ul, li ol { margin: 0; }
+ul, ol { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd { margin-left: 1.5em; }
+table { margin-bottom: 1.5em; width:100%; }
+th,td { padding: 0 .2em; vertical-align: middle; }
+hr { background: #666; border: none; clear: both; float: none ;height: 1px; margin: -1px 0 1.5em; width: 100%; }
 
 /**
  * 2.LAYOUT
@@ -141,7 +146,7 @@ table td {
 /**
  * 3.MAIN
  */
-/* 1 column | global values*/
+/* 1 column: global values*/
 #main {
   margin: 0 0 1.5em;
   position: relative;
@@ -174,7 +179,7 @@ body.sidebar-second #main {
 /**
  * 4.SIDEBARS
  */
-/* 3 columns */
+/* 3 columns: sidebar-first */
 body.two-sidebars #sidebar-first {
   float: left;
   margin: 0 20px 0 -720px;
@@ -182,6 +187,7 @@ body.two-sidebars #sidebar-first {
   width: 220px;
 }
 
+/* 3 columns: sidebar-second */
 body.two-sidebars #sidebar-second {
   float: left;
   margin: 0;
@@ -209,19 +215,19 @@ body.sidebar-second #sidebar-second {
  * 5.HEADER
  */
 #header {
-  height: 9em;
+  position: relative;
 }
 
 #branding {
   display: block;
   float: left;
-  margin: 3em 0 0 0;
-  width: 300px;
+  margin: 3em 0 1.5em 0;
 }
 
 #header #logo {
-  float: left;
+  left: 0;
   margin: 0 1em 0 0;
+  position: absolute;
 }
 
 #header #site-name {
@@ -230,7 +236,7 @@ body.sidebar-second #sidebar-second {
   font-size: 3em;
   font-weight: bold;
   line-height: 1em;
-  margin-bottom: 0;
+  margin: 0 0 0 70px;
 }
 
 #header #site-name a:hover {
@@ -238,23 +244,28 @@ body.sidebar-second #sidebar-second {
 }
 
 #header #site-slogan {
-  display: block
+  display: block;
+  clear: left;
+  margin: 0 0 0 70px;
 }
 
 /**
  * 6.NAVIGATION
  */
 #navigation {
-  margin-bottom: 1.5em;
+  margin: 0 0 1.5em;
   padding: 0;
 }
 
 #navigation ul.main-menu {
   background: #ddd;
+  margin: 0;
+  padding: 0;
 }
 
 #navigation ul.main-menu li {
   margin: 0;
+  padding: 0;
 }
 
 #navigation ul.main-menu li a {
@@ -264,15 +275,18 @@ body.sidebar-second #sidebar-second {
   padding: 0 1em;
 }
 
-ul.secondary-menu {
+#navigation ul.secondary-menu {
   background: #eee;
-}
-
-ul.secondary-menu li {
   margin: 0;
+  padding: 0;
 }
 
-ul.secondary-menu li a {
+#navigation ul.secondary-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+#navigation ul.secondary-menu li a {
   display: block;
   float: left;
   line-height: 3em;
@@ -283,16 +297,14 @@ ul.secondary-menu li a {
   padding-bottom: 1.5em;
 }
 
-ul.primary {
-  margin: 2px 0 1.5em 0;
+/* menus and item lists */
+.item-list ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
 }
-
-ul, ul.menu {
-  list-style-position: inside;
-}
-
-ul li, .item-list ul li {
-  margin: 0 0 0 .2em;
+.item-list ul li {
+  margin: 0;
+  padding: 0;
 }
 
 ul.menu li {
@@ -301,14 +313,54 @@ ul.menu li {
   padding: 0;
 }
 
-ul.links.inline {
+ul.inline {
   clear: both;
-  display: block;
 }
 
 ul.inline li {
   margin: 0;
   padding: 0 1em 0 0;
+}
+
+/* tabs */
+.tabs {
+  margin: 0 0 1.5em;
+}
+
+ul.primary, ul.secondary {
+  border: none;
+  line-height: 3em;
+  margin: 0;
+  padding: 0;
+}
+
+ul.secondary {
+  border-top: 1px solid #ccc;
+  margin-top: -1px;
+}
+
+ul.primary li, ul.secondary li {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.primary li a, ul.primary li.active a, ul.secondary li a, ul.secondary li.active a {
+  background: none;
+  border: none;
+  line-height: 1.5em;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+
+ul.primary li.active a, ul.secondary li.active a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul.primary li a:hover, ul.secondary li a:hover {
+  background: none;
+  text-decoration: underline;
 }
 
 /**
@@ -324,6 +376,7 @@ ul.inline li {
   margin-bottom: 1.5em;
 }
 
+/* tags */
 .field-name-field-tags div {
   float: left;
   margin-bottom: 1.5em;
@@ -333,6 +386,7 @@ ul.inline li {
   margin: 0 1em 0 0;
 }
 
+/* profile */
 .profile {
   margin: 1.5em 0;
 }

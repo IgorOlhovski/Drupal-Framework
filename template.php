@@ -92,6 +92,16 @@ function framework_menu_local_tasks(&$variables) {
 }
 
 /**
+ * Override or insert variables into the node template.
+ */
+function framework_preprocess_node(&$variables) {
+  $variables['submitted'] = t('Published by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
+  if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
+    $variables['classes_array'][] = 'node-full';
+  }
+}
+
+/**
  * Changes the search form to use the "search" input element of HTML5.
  */
 function framework_preprocess_search_block_form(&$vars) {

@@ -14,22 +14,20 @@
     <?php print render($title_suffix); ?>
 
     <?php if ($display_submitted): ?>
-      <p class="submitted">
-        <?php print $submitted; ?>
-      </p>
+      <p class="submitted"><?php print $submitted; ?></p>
     <?php endif; ?>
   </header>
 <?php endif; ?>
 
 <div class="content"<?php print $content_attributes; ?>>
   <?php
-    // We hide the comments, tags and links now so that we can render them later.
+    // Hide comments, tags, and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
     print render($content);
   ?>
-</div> <!-- /.content -->
+</div>
 
 <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
   <footer>

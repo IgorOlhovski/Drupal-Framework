@@ -26,10 +26,10 @@
     <?php endif; ?>
   </div>
 
-	<?php if (!empty($content['links'])): ?>
+  <?php if (!empty($content['links'])): ?>
     <footer>
       <?php print render($content['links']) ?>
     </footer>
   <?php endif; ?>
 
-</article>
+</article> <!-- /.comment -->

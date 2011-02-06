@@ -13,4 +13,4 @@
     <?php print $content ?>
   </div>
   
-</section>
+</section> <!-- /.block -->
