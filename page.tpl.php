@@ -11,13 +11,13 @@
   </div>
 
   <header id="header" role="banner" class="clearfix">
-    <div id="branding">
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-      <?php if ($site_name || $site_slogan): ?>
+	<?php if ($logo): ?>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+      </a>
+    <?php endif; ?>
+    <?php if ($site_name || $site_slogan): ?>
+      <div id="site-name-slogan">
         <?php if ($site_name): ?>
           <?php if ($title): ?>
             <div id="site-name"><strong>
@@ -32,40 +32,34 @@
         <?php if ($site_slogan): ?>
           <div id="site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
-      <?php endif; ?>
-    </div> <!-- /#branding -->
+      </div>
+    <?php endif; ?>
     <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
-  <nav id="navigation" role="navigation" class="clearfix">
-    <?php if ($page['nav']): ?>
-      <?php print render($page['nav']); ?>
-    <?php endif; ?>
-    <?php if (!$page['nav']): ?> <!--if block in nav region, overrides default $primary_menu and $secondary_secondary-->
-      <?php if ($primary_menu): print $primary_menu; endif; ?>
-      <?php if ($secondary_menu): print $secondary_menu; endif; ?>
-    <?php endif; ?>
-  </nav> <!-- /#navigation -->
+  <?php if ($main_menu || $secondary_menu): ?>
+    <nav id="navigation" role="navigation" class="clearfix">
+      <?php if ($page['navigation']): ?> <!--if block in navigation region, override $main_menu and $secondary_menu-->
+        <?php print render($page['navigation']); ?>
+      <?php endif; ?>
+      <?php if (!$page['navigation']): ?>
+        <?php if ($main_menu): print $main_menu; endif; ?>
+        <?php if ($secondary_menu): print $secondary_menu; endif; ?>
+      <?php endif; ?>
+    </nav> <!-- /#navigation -->
+  <?php endif; ?>
 
   <section id="main" role="main" class="clearfix">
-    <?php if ($page['highlighted']): ?>
-      <div id="highlighted"><?php print render($page['highlighted']); ?></div>
-    <?php endif; ?>
     <?php if ($breadcrumb): print $breadcrumb; endif;?>
     <?php print $messages; ?>
     <a id="main-content"></a>
+    <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
     <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1 class="title" id="page-title"><?php print $title ?></h1>
-    <?php endif; ?>
+    <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
     <?php print render($title_suffix); ?>
-    <?php if ($tabs): ?>
-      <div class="tabs"><?php print render($tabs); ?></div>
-    <?php endif; ?>
+    <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
     <?php print render($page['help']); ?>
-    <?php if ($action_links): ?>
-      <ul class="action-links"><?php print render($action_links); ?></ul>
-	<?php endif; ?>
+    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
     <?php print render($page['content']); ?>
   </section> <!-- /#main -->
   

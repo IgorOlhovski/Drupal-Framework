@@ -25,8 +25,9 @@ function framework_breadcrumb($variables) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
-
-    $output .= '<nav class="breadcrumb">' . implode(' › ', $breadcrumb) . '</nav>';
+    // Uncomment to add current page to breadcrumb
+	// $breadcrumb[] = drupal_get_title();
+    $output .= '<nav class="breadcrumb">' . implode(' » ', $breadcrumb) . '</nav>';
     return $output;
   }
 }
@@ -36,7 +37,7 @@ function framework_breadcrumb($variables) {
  */
 function framework_preprocess_page(&$vars) {
   if (isset($vars['main_menu'])) {
-    $vars['primary_menu'] = theme('links__system_main_menu', array(
+    $vars['main_menu'] = theme('links__system_main_menu', array(
       'links' => $vars['main_menu'],
       'attributes' => array(
         'class' => array('links', 'main-menu', 'clearfix'),
@@ -49,7 +50,7 @@ function framework_preprocess_page(&$vars) {
     ));
   }
   else {
-    $vars['primary_nav'] = FALSE;
+    $vars['main_menu'] = FALSE;
   }
   if (isset($vars['secondary_menu'])) {
     $vars['secondary_menu'] = theme('links__system_secondary_menu', array(
@@ -87,7 +88,6 @@ function framework_menu_local_tasks(&$variables) {
     $variables['secondary']['#suffix'] = '</ul>';
     $output .= drupal_render($variables['secondary']);
   }
-
   return $output;
 }
 

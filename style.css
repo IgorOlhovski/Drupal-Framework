@@ -126,8 +126,9 @@ dl { margin: 0 0 1.5em 0; }
 dl dt { font-weight: bold; }
 dd { margin-left: 1.5em; }
 table { margin-bottom: 1.5em; width:100%; }
-th,td { padding: 0 .2em; vertical-align: middle; }
-hr { background: #666; border: none; clear: both; float: none ;height: 1px; margin: -1px 0 1.5em; width: 100%; }
+th, tr, td { padding: 0.1em 0.5em; vertical-align: middle; }
+hr { background: #666; border: none; clear: both; float: none; height: 1px; margin: -1px 0 1.5em; width: 100%; }
+fieldset { border: 1px solid #ccc; margin: .5em 0; padding: 1em; }
 
 /**
  * 2.LAYOUT
@@ -215,28 +216,26 @@ body.sidebar-second #sidebar-second {
  * 5.HEADER
  */
 #header {
+  margin: 0 0 1.5em;
+  padding: 3em 0 0;
   position: relative;
 }
 
-#branding {
-  display: block;
+#header #logo {
   float: left;
-  margin: 3em 0 1.5em 0;
+  margin: 0 1em 0 0;
 }
 
-#header #logo {
-  left: 0;
-  margin: 0 1em 0 0;
-  position: absolute;
+#header #site-name-slogan {
+  float: left;
 }
 
 #header #site-name {
-  float: left;
   font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
   font-size: 3em;
   font-weight: bold;
   line-height: 1em;
-  margin: 0 0 0 70px;
+  margin: 0;
 }
 
 #header #site-name a:hover {
@@ -244,9 +243,7 @@ body.sidebar-second #sidebar-second {
 }
 
 #header #site-slogan {
-  display: block;
-  clear: left;
-  margin: 0 0 0 70px;
+  margin: 0;
 }
 
 /**
@@ -264,6 +261,7 @@ body.sidebar-second #sidebar-second {
 }
 
 #navigation ul.main-menu li {
+  float: left;
   margin: 0;
   padding: 0;
 }
@@ -293,6 +291,10 @@ body.sidebar-second #sidebar-second {
   padding: 0 1em;
 }
 
+#skip-link {
+  position: absolute;
+}
+
 .breadcrumb {
   padding-bottom: 1.5em;
 }
@@ -308,7 +310,6 @@ body.sidebar-second #sidebar-second {
 }
 
 ul.menu li {
-  line-height: 1.5em;
   margin: 0;
   padding: 0;
 }
@@ -322,45 +323,24 @@ ul.inline li {
   padding: 0 1em 0 0;
 }
 
-/* tabs */
-.tabs {
-  margin: 0 0 1.5em;
+/* admin tabs */
+.tabs-wrapper {
+  margin: 1px 0 1.5em;
 }
 
-ul.primary, ul.secondary {
-  border: none;
-  line-height: 3em;
+ul.primary {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 0;
 }
 
 ul.secondary {
-  border-top: 1px solid #ccc;
-  margin-top: -1px;
-}
-
-ul.primary li, ul.secondary li {
-  border: none;
-  margin: 0;
+  line-height: 3em;
+  margin: 0 0 -1px;
   padding: 0;
 }
 
-ul.primary li a, ul.primary li.active a, ul.secondary li a, ul.secondary li.active a {
-  background: none;
-  border: none;
-  line-height: 1.5em;
-  margin: 0 1em 0 0;
-  padding: 0;
-}
-
-ul.primary li.active a, ul.secondary li.active a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-ul.primary li a:hover, ul.secondary li a:hover {
-  background: none;
-  text-decoration: underline;
+ul.secondary a.active {
+  border-bottom: none;
 }
 
 /**
@@ -377,9 +357,12 @@ ul.primary li a:hover, ul.secondary li a:hover {
 }
 
 /* tags */
+.field-name-field-tags {
+  margin: 0 0 1.5em;
+}
+
 .field-name-field-tags div {
-  float: left;
-  margin-bottom: 1.5em;
+  display: inline;
 }
 
 .field-name-field-tags .field-item {
@@ -419,6 +402,11 @@ ul.primary li a:hover, ul.secondary li a:hover {
   margin-bottom: 1.5em;
 }
 
+.comment .new {
+  color: red;
+  text-transform: capitalize;
+}
+
 /**
  * 9.BLOCKS
  */
@@ -445,7 +433,8 @@ ul.primary li a:hover, ul.secondary li a:hover {
  * 11.CSS SUPPORT
  *
  * Built-in classes:
- * .clearfix          | float clearing
- * .element-invisible | hide element visually
- * .element-hidden    | hide element from all users
+ * .clearfix                            | float clearing
+ * .element-invisible                   | hide element visually
+ * .element-invisible.element-focusable | allow element to be focusable when navigated to via keyboard
+ * .element-hidden                      | hide element from all users
  */
