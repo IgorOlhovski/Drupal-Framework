@@ -1,5 +1,4 @@
 <?php
-// $Id$
 ?>
 <?php phptemplate_comment_wrapper(NULL, $node->type); ?>
 

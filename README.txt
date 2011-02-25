@@ -1,4 +1,3 @@
-$Id$
 
 Drupal 5 Framework theme
 Created by Andre Griffin > user andregriffin
