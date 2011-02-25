@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Credit: John Albin Wilkins

@@ -1,5 +1,4 @@
 <?php
-// $Id$
 ?>
 <article class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status; print ' '. $zebra; ?> clearfix">
 

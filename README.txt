@@ -1,4 +1,3 @@
-$Id$
 
 Framework 3.x for Drupal 6
 Created by André Griffin

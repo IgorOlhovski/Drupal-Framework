@@ -1,5 +1,4 @@
 <?php
-// $Id$
 ?>
 <section id="block-<?php print $block->module .'-'. $block->delta; ?>" class="block block-<?php print $block->module ?> clearfix">
   <?php if (!empty($block->subject)): ?>
