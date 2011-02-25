@@ -1,5 +1,4 @@
 <?php
-// $Id$
 ?>
 <?php if (!empty($content)): ?>
 <div class="<?php print $classes; ?>">

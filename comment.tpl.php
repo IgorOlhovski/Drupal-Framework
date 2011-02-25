@@ -1,5 +1,4 @@
 <?php
-// $Id$
 ?>
 <article class="<?php print $classes . ' ' . $zebra; ?>"<?php print $attributes; ?>>
   

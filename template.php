@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Implements hook_html_head_alter().

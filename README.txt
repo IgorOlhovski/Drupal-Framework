@@ -1,4 +1,3 @@
-// $Id$
 
 Framework 3.x for Drupal 7
 Created by André Griffin
