@@ -1,4 +1,3 @@
-$Id$
 
 Drupal 6 Framework theme
 Created by Andre Griffin > user andregriffin
