@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Credit: John Albin Wilkins
  * @file

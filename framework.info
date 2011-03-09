@@ -11,3 +11,4 @@ regions[header] = Header
 regions[content] = Content
 regions[navigation] = Navigation
 regions[footer] = Footer
+

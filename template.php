@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Sets the body-tag class attribute.
  */
@@ -44,19 +43,19 @@ function framework_comment_wrapper($content, $node) {
  * Allow theming of publishing information.
  */
 function framework_node_submitted($node) {
-  return t('Published by <span class="author">!username</span> on <time datetime="!fulldatetime">!datetime</time>',
+  return t('Published by !username on !datetime',
     array(
-      '!username' => theme('username', $node),
-      '!datetime' => format_date($node->created),
+      '!username' => '<span class="author">'. theme('username', $node). '</span>',
+      '!datetime' => '<time datetime="!fulldatetime">'. format_date($node->created). '</time>',
       '!fulldatetime' => format_date($node->created, 'custom', 'Y-m-d\TH:i:sZ')
     ));
 }
 
 function framework_comment_submitted($comment) {
-  return t('<span class="author">!username</span> | <time datetime="!fulldatetime">!datetime</time>',
+  return t('!username | !datetime',
     array(
-      '!username' => theme('username', $comment),
-      '!datetime' => format_date($comment->timestamp),
+      '!username' => '<span class="author">'. theme('username', $comment). '</span>',
+      '!datetime' => '<time datetime="!fulldatetime">'. format_date($comment->timestamp). '</time>',
       '!fulldatetime' => format_date($comment->created, 'custom', 'Y-m-d\TH:i:sZ')
     ));
 }

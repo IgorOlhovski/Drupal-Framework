@@ -1,3 +1,4 @@
+$Id: README.txt,v 1.6 2011/02/18 05:47:53 andregriffin Exp $
 
 Framework 3.x for Drupal 6
 Created by André Griffin
@@ -22,9 +23,9 @@ USAGE
 Install to sites/all/themes
 
 To fully convert Framework to your own custom theme, it is encouraged that you: 
- - Copy the 'framework' directory within sites/all/themes/ and rename it as 'yourthemename' 
- - Change the filename and contents of the .info file accordingly
- - Use find/replace in template.php to replace 'framework' with 'yourthemename' 
+ - COPY the 'framework' directory within sites/all/themes/ and rename it as 'yourthemename' 
+ - Change the filename and contents of the .info file accordingly and remove all 'packing script' info at the end of the file
+ - Use find/replace in template.php and template.block-editing.inc to replace 'framework' with 'yourthemename' 
  - Upload and enable the theme
  - Modify as needed
 

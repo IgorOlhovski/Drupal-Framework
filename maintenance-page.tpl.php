@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="<?php echo $language->language ?>" dir="<?php echo $language->dir ?>">
 
