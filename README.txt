@@ -1,4 +1,3 @@
-
 Framework 3.x for Drupal 7
 Created by André Griffin
 http://drupal.org/project/framework
@@ -22,8 +21,8 @@ USAGE
 Install to sites/all/themes
 
 To fully convert Framework to your own custom theme, it is encouraged that you: 
- - Copy the 'framework' directory within sites/all/themes/ and rename it as 'yourthemename' 
- - Change the filename and contents of the .info file accordingly
+ - COPY the 'framework' directory within sites/all/themes/ and rename it as 'yourthemename' 
+ - Change the filename and contents of the .info file accordingly and remove all 'packing script' info at the end of the file
  - Use find/replace in template.php to replace 'framework' with 'yourthemename' 
  - Upload and enable the theme
  - Modify as needed

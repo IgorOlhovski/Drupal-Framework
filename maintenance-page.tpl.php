@@ -1,5 +1,4 @@
-<?php
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
 
 <head>
@@ -22,7 +21,7 @@
 
   <header id="header" role="banner" class="clearfix">
 	<?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" id="logo">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
     <?php endif; ?>
@@ -31,11 +30,11 @@
         <?php if ($site_name): ?>
           <?php if ($title): ?>
             <div id="site-name"><strong>
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
             </strong></div>
           <?php else: /* Use h1 when the content title is empty */ ?>
             <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
             </h1>
           <?php endif; ?>
         <?php endif; ?>

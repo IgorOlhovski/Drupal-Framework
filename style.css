@@ -15,17 +15,24 @@
 10.Footer
 11.CSS Support
 
-[Font sizes - based on 75%/12px body font-size]
-36px = 3em
-30px = 2.5em
-24px = 2em
-18px = 1.5em
-16px = 1.333333em
-15px = 1.2em
-14px = 1.1667em
-12px = 1em
-11px = .9167em
-10px = .8333em
+[px to em sizing - 81.25%/13px body font-size]
+       font-size / line-height / margin-top
+------------------------------------------------
+40px = 3.0769em  / 1           / 0.5em
+36px = 2.7692em  / 1.1111      / 0.5556em
+30px = 2.3077em  / 1.3333      / 0.6667em
+26px = 2em       / 1.5385      / 0.7692em
+24px = 1.8462em  / 1.6667      / 0.8333em
+20px = 1.5385em  / 1           / 1em
+18px = 1.3846e,  / 1.1111      / 1.1111em
+17px = 1.3077em  / 1.1765      / 1.1765em
+16px = 1.2308em  / 1.25        / 1.25em
+15px = 1.1538em  / 1.3333      / 1.3333em
+14px = 1.0769em  / 1.4286      / 1.4286em
+13px = 1em       / 1.5385      / 1.5385em
+12px = 0.9231em  / 1.6667      / 1.6667em
+11px = 0.8462em  / 1.8182      / 1.8182em
+10px = 0.7692em  / 2           / 2em
 
 Equation for font sizing: 
 -Desired px ÷ Default (or parent) px = em size
@@ -34,66 +41,58 @@ Equation for font sizing:
 /**
  * 0.RESET 
  */
+
 @import "reset.css";
 
 /**
  * 1.GLOBAL
  */
+
 body {
   background: #fff;
-  color: #000;
+  color: #222;
   font-family: Lucida Grande, Verdana, Arial, sans-serif;
-  font-size: 75%;
-  line-height:1.5;
+  font-size: 0.8125em;
+  line-height: 1.5385;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: normal;
 }
 
-h1 {
-  font-size: 3em;
-  line-height: 1em;
-  margin-bottom: .5em; 
-}
-
-h2 {
+h1, .h1 {
   font-size: 2em;
+  line-height: 1.5385;
+  margin-top: 0.7692em;
 }
 
-h3 {
-  font-size: 1.5em;
-  line-height: 2em;
+h2, .h2 {
+  font-size: 1.5385em;
+  line-height: 2;
+  margin-top: 1em;
 }
 
-h4 {
-  font-size: 1.2em;
-  line-height: 1.25em;
-  margin-bottom: 1.25em; 
+h3, .h3 {
+  font-size: 1.2308em;
+  line-height: 1.25;
+  margin-top: 1.25em;
 }
 
-h5 {
+h4, h5, h6, .h4, .h5, .h6 {
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: 1.5em; 
-}
-
-h6 {
-  font-size: .8333em;
-  font-weight: bold;
-  line-height: 1.8em;
-  margin-bottom: 1.8em;
-}
-
-h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
-  margin: 0;
+  line-height: 1.5385;
+  margin-top: 1.5385em;
 }
 
 p {
-  margin: 0 0 1.5em 0;
+  font-size: 1em;
+  line-height: 1.5385;
+  margin: 0 0 1.5385em 0;
 }
 
 p a:link {
@@ -116,22 +115,29 @@ a:hover, a:active, li a.active {
   text-decoration: underline;
 }
 
-/* Common Styling */
-li ul, li ol { margin: 0; }
-ul, ol { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
-ul { list-style-type: disc; }
-ol { list-style-type: decimal; }
-dl { margin: 0 0 1.5em 0; }
-dl dt { font-weight: bold; }
-dd { margin-left: 1.5em; }
-table { margin-bottom: 1.5em; width:100%; }
-th, tr, td { padding: 0.1em 0.5em; vertical-align: middle; }
-hr { background: #666; border: none; clear: both; float: none; height: 1px; margin: -1px 0 1.5em; width: 100%; }
-fieldset { border: 1px solid #ccc; margin: .5em 0; padding: 1em; }
+img {
+  display: block;
+}
+
+/* apply common styling after reset.css */
+
+li ul, li ol {  margin: 0; }
+ul, ol {  margin: 0 1.5385em 1.5385em 0;  padding-left: 1.5385em; }
+ul {  list-style-type: disc; }
+ol {  list-style-type: decimal; }
+dl {  margin: 0 0 1.5385em 0; }
+dl dt {  font-weight: bold; }
+dd {  margin-left: 1.5385em; }
+hr {  background: #666;  border: none;  clear: both;  float: none;  height: 1px;  margin: 0 0 1.4615em;  width: 100%; }
+fieldset {  border: 1px solid #ccc;  margin: 0 0 1.4615em;  padding: 1.5385em; }
+table {  margin-bottom: 1.5385em;  width: 100%; }
+th, tr, td {  vertical-align: middle; }
+.sticky-header th, .sticky-table th {  border-bottom: 3px solid #ccc;  padding-right: 1em;  text-align: left; }
 
 /**
  * 2.LAYOUT
  */
+
 #wrapper {
   margin: 0 auto;
   padding: 0 10px;
@@ -139,28 +145,33 @@ fieldset { border: 1px solid #ccc; margin: .5em 0; padding: 1em; }
 }
 
 /* add this class to div#wrapper in page.tpl to show grid */
+
 .showgrid {
-  background: url(images/grid.gif) repeat-y;
+  background: url(images/grid.png) repeat-y;
 }
 
 /**
  * 3.MAIN
  */
+
 /* 1 column: global values*/
+
 #main {
-  margin: 0 0 1.5em;
-  position: relative;
+  display: inline;
+  margin: 0;
 }
 
 /* 3 columns */
+
 body.two-sidebars #main {
   float: left;
-  margin: 0 20px 0 240px;
+  margin: 0 0 0 240px;
   padding: 0;
   width: 460px;
 }
 
 /* 2 columns: sidebar-first */
+
 body.sidebar-first #main {
   float: right;
   margin: 0;
@@ -169,9 +180,10 @@ body.sidebar-first #main {
 }
 
 /* 2 columns: sidebar-second */
+
 body.sidebar-second #main {
   float: left;
-  margin: 0 20px 0 0;
+  margin: 0;
   padding: 0;
   width: 700px;
 }
@@ -179,31 +191,36 @@ body.sidebar-second #main {
 /**
  * 4.SIDEBARS
  */
+
 /* 3 columns: sidebar-first */
+
 body.two-sidebars #sidebar-first {
   float: left;
-  margin: 0 20px 0 -720px;
+  margin: 0 0 0 -700px;
   padding: 0;
   width: 220px;
 }
 
 /* 3 columns: sidebar-second */
+
 body.two-sidebars #sidebar-second {
-  float: left;
+  float: right;
   margin: 0;
-  padding: 0px;
+  padding: 0;
   width: 220px;
 }
 
 /* 2 columns: sidebar-first */
+
 body.sidebar-first #sidebar-first {
   float: left;
-  margin: 0 20px 0 0;
+  margin: 0;
   padding: 0;
   width: 220px;
 }
 
 /* 2 columns: sidebar-second */
+
 body.sidebar-second #sidebar-second {
   float: right;
   margin: 0;
@@ -214,26 +231,27 @@ body.sidebar-second #sidebar-second {
 /**
  * 5.HEADER
  */
-#header {
-  margin: 0 0 1.5em;
-  padding: 3em 0 0;
-  position: relative;
-}
 
-#header #logo {
-  float: left;
-  margin: 0 1em 0 0;
+#header {
+  margin: 0;
+  padding: 3.0769em 0 0;
+  position: relative;
 }
 
 #header #site-name-slogan {
   float: left;
+  margin: 0 0 1.5385em;
+}
+
+#header #site-slogan {
+  margin: 0;
 }
 
 #header #site-name {
-  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  line-height: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.7692em;
+  font-weight: 700;
+  line-height: 1.1111;
   margin: 0;
 }
 
@@ -241,20 +259,22 @@ body.sidebar-second #sidebar-second {
   text-decoration: none;
 }
 
-#header #site-slogan {
-  margin: 0;
+#header #logo {
+  float: left;
+  margin: 0 1em 1.5385em 0;
 }
 
 /**
  * 6.NAVIGATION
  */
+
 #navigation {
-  margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5385em;
   padding: 0;
 }
 
 #navigation ul.main-menu {
-  background: #ddd;
   margin: 0;
   padding: 0;
 }
@@ -267,42 +287,40 @@ body.sidebar-second #sidebar-second {
 
 #navigation ul.main-menu li a {
   display: block;
-  float: left;
-  line-height: 3em;
-  padding: 0 1em;
+  padding: 0 2em 0 0;
 }
 
 #navigation ul.secondary-menu {
-  background: #eee;
   margin: 0;
   padding: 0;
 }
 
 #navigation ul.secondary-menu li {
+  float: left;
   margin: 0;
   padding: 0;
 }
 
 #navigation ul.secondary-menu li a {
   display: block;
-  float: left;
-  line-height: 3em;
-  padding: 0 1em;
+  padding: 0 2em 0 0;
+}
+
+.breadcrumb {
+  padding-bottom: 0;
 }
 
 #skip-link {
   position: absolute;
 }
 
-.breadcrumb {
-  padding-bottom: 1.5em;
-}
-
 /* menus and item lists */
+
 .item-list ul {
   margin: 0;
-  padding: 0 0 0 1.5em;
+  padding: 0 0 0 1.5385em;
 }
+
 .item-list ul li {
   margin: 0;
   padding: 0;
@@ -323,19 +341,64 @@ ul.inline li {
 }
 
 /* admin tabs */
+
 .tabs-wrapper {
-  margin: 1px 0 1.5em;
+  border-bottom: 1px solid #333;
+  margin: 0 0 1.4615em;
 }
 
 ul.primary {
+  border: none;
   margin: 0;
-  padding: 1px 0 0;
+  padding: 0;
+}
+
+ul.primary li a {
+  background: none;
+  border: none;
+  display: block;
+  float: left;
+  line-height: 1.5385em;
+  margin: 0;
+  padding: 0 1em;
+}
+
+ul.primary li a:hover, ul.primary li a.active {
+  background: #666;
+  border: none;
+  color: #fff;
+}
+
+ul.primary li a:hover {
+  background: #888;
+  text-decoration: none;
 }
 
 ul.secondary {
-  line-height: 3em;
-  margin: 0 0 -1px;
+  background: #666;
+  border-bottom: none;
+  clear: both;
+  margin: 0;
   padding: 0;
+}
+
+ul.secondary li {
+  border-right: none;
+}
+
+ul.secondary li a, ul.secondary li a:link {
+  border: none;
+  color: #ccc;
+  display: block;
+  float: left;
+  line-height: 1.5385em;
+  padding: 0 1em;
+}
+
+ul.secondary li a:hover, ul.secondary li a.active {
+  background: #888;
+  color: #fff;
+  text-decoration: none;
 }
 
 ul.secondary a.active {
@@ -345,32 +408,33 @@ ul.secondary a.active {
 /**
  * 7.NODES
  */
-#page-title {
-  font-size: 2em;
-  line-height: 1.5em;
-  margin-bottom: 0;
-}
 
 .node {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5385em;
 }
 
 /* tags */
-.field-name-field-tags {
-  margin: 0 0 1.5em;
-}
 
-.field-name-field-tags div {
-  display: inline;
+.field-name-field-tags {
+  margin: 0 0 1.5385em;
 }
 
 .field-name-field-tags .field-item {
   margin: 0 1em 0 0;
 }
 
+.field-name-field-tags div {
+  display: inline;
+}
+
 /* profile */
+
 .profile {
-  margin: 1.5em 0;
+  margin: 1.5385em 0;
+}
+
+.profile dd {
+  margin-bottom: 1.5385em;
 }
 
 .profile h3 {
@@ -381,10 +445,6 @@ ul.secondary a.active {
   margin-bottom: 0;
 }
 
-.profile dd {
-  margin-bottom: 1.5em;
-}
-
 .password-parent {
   width: 36em;
 }
@@ -392,40 +452,44 @@ ul.secondary a.active {
 /**
  * 8.COMMENTS
  */
+
 #comments {
   clear: both;
-  margin-top: 1.5em;
+  margin-top: 1.5385em;
 }
 
 .comment {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5385em;
 }
 
 .comment .new {
   color: red;
   text-transform: capitalize;
+  margin-left: 1em;
 }
 
 /**
  * 9.BLOCKS
  */
+
 .block {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5385em;
 }
 
 /**
  * 10.FOOTER
  */
+
 #footer {
   clear: both;
-  padding: 1.5em 0;
+  padding: 1.5385em 0;
   position: relative;
 }
 
 #footer a.feed-icon {
   position: absolute;
   right: 0;
-  top: 1.416667em;
+  top: 1.6667em;
 }
 
 /**

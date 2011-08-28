@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Implements hook_html_head_alter().
  * We are overwriting the default meta character type tag with HTML5 version.

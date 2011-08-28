@@ -1,5 +1,3 @@
-<?php
-?>
 <?php if (!$page): ?>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 <?php endif; ?>
@@ -18,7 +16,7 @@
       <?php print render($title_suffix); ?>
   
       <?php if ($display_submitted): ?>
-        <p class="submitted"><?php print $submitted; ?></p>
+        <span class="submitted"><?php print $submitted; ?></span>
       <?php endif; ?>
 
     <?php if (!$page): ?>
@@ -46,5 +44,5 @@
   <?php print render($content['comments']); ?>
 
 <?php if (!$page): ?>
-  </article>
-<?php endif; ?> <!-- /.node -->
+  </article> <!-- /.node -->
+<?php endif; ?>
