@@ -1,5 +1,3 @@
-$Id: README.txt,v 1.6 2011/02/18 05:47:53 andregriffin Exp $
-
 Framework 3.x for Drupal 6
 Created by André Griffin
 http://drupal.org/project/framework

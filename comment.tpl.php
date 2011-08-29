@@ -3,13 +3,13 @@
   <header>
     <?php print $picture ?>
 
+    <h3><?php print $title ?></h3>
+
     <span class="submitted"><?php print $submitted; ?></span>
 
     <?php if ($comment->new) : ?>
       <span class="new"><?php print $new ?></span>
     <?php endif; ?>
-
-    <h3><?php print $title ?></h3>
   </header>
 
   <div class="content">

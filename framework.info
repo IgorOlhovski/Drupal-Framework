@@ -1,6 +1,5 @@
 name = Framework
 description = Framework is a blank canvas for theme developers. Use Framework as a starting point to facilitate your theme development.
-version = VERSION
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = style.css

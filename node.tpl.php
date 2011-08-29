@@ -14,7 +14,7 @@
       <?php endif; ?>
 
 	  <?php if ($submitted): ?>
-        <p class="submitted"><?php print $submitted; ?></p>
+        <span class="submitted"><?php print $submitted; ?></span>
       <?php endif; ?>
 
     <?php if (!$page): ?>
@@ -26,7 +26,7 @@
     <?php print $content ?>
   </div>
 
-  <?php if (!empty($links) || !empty($terms)): ?>
+  <?php if (!empty($terms) || !empty($links)): ?>
     <footer>
       <?php if ($terms): ?>
         <div class="terms">
@@ -42,5 +42,5 @@
   <?php endif;?>
 
 <?php if (!$page): ?>
-  </article>
-<?php endif;?> <!-- /.node -->
+  </article> <!-- /.node -->
+<?php endif;?>

@@ -60,6 +60,19 @@ function framework_comment_submitted($comment) {
     ));
 }
 
+function framework_menu_local_tasks() {
+  $output = '';
+
+  if ($primary = menu_primary_local_tasks()) {
+    $output .= "<ul class=\"tabs primary clearfix\">\n" . $primary . "</ul>\n";
+  }
+  if ($secondary = menu_secondary_local_tasks()) {
+    $output .= "<ul class=\"tabs secondary clearfix\">\n" . $secondary . "</ul>\n";
+  }
+
+  return $output;
+}
+
 /**
  * Override or insert variables into the block templates.
  *
