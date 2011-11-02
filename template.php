@@ -21,10 +21,84 @@ function framework_id_safe($string) {
  */
 function framework_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-// uncomment the next line to enable current page in the breadcrumb trail
-//    $breadcrumb[] = drupal_get_title();
-    return '<nav class="breadcrumb">'. implode(' » ', $breadcrumb) .'</nav>';
+    // Provide a navigational heading to give context for breadcrumb links to
+    // screen-reader users. Make the heading invisible with .element-invisible.
+    $heading = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+    // Uncomment to add current page to breadcrumb
+    // $breadcrumb[] = drupal_get_title();
+    return '<nav class="breadcrumb">' . $heading . implode(' » ', $breadcrumb) . '</nav>';
   }
+}
+
+function framework_links($links, $attributes = array('class' => 'links'), $heading = '') {
+  global $language;
+  $output = '';
+
+  if (count($links) > 0) {
+    // Treat the heading first if it is present to prepend it to the
+    // list of links.
+    if (!empty($heading)) {
+      if (is_string($heading)) {
+        // Prepare the array that will be used when the passed heading
+        // is a string.
+        $heading = array(
+          'text' => $heading,
+          // Set the default level of the heading.
+          'level' => 'h2',
+        );
+      }
+      $output .= '<' . $heading['level'];
+      if (!empty($heading['class'])) {
+        $output .= drupal_attributes(array('class' => $heading['class']));
+      }
+      $output .= '>' . check_plain($heading['text']) . '</' . $heading['level'] . '>';
+    }
+
+    $output .= '<ul'. drupal_attributes($attributes) .'>';
+
+    $num_links = count($links);
+    $i = 1;
+
+    foreach ($links as $key => $link) {
+      $class = $key;
+
+      // Add first, last and active classes to the list of links to help out themers.
+      if ($i == 1) {
+        $class .= ' first';
+      }
+      if ($i == $num_links) {
+        $class .= ' last';
+      }
+      if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))
+          && (empty($link['language']) || $link['language']->language == $language->language)) {
+        $class .= ' active';
+      }
+      $output .= '<li'. drupal_attributes(array('class' => $class)) .'>';
+
+      if (isset($link['href'])) {
+        // Pass in $link as $options, they share the same keys.
+        $output .= l($link['title'], $link['href'], $link);
+      }
+      else if (!empty($link['title'])) {
+        // Some links are actually not links, but we wrap these in <span> for adding title and class attributes
+        if (empty($link['html'])) {
+          $link['title'] = check_plain($link['title']);
+        }
+        $span_attributes = '';
+        if (isset($link['attributes'])) {
+          $span_attributes = drupal_attributes($link['attributes']);
+        }
+        $output .= '<span'. $span_attributes .'>'. $link['title'] .'</span>';
+      }
+
+      $i++;
+      $output .= "</li>\n";
+    }
+
+    $output .= '</ul>';
+  }
+
+  return $output;
 }
 
 /**
@@ -46,7 +120,7 @@ function framework_node_submitted($node) {
   return t('Published by !username on !datetime',
     array(
       '!username' => '<span class="author">'. theme('username', $node). '</span>',
-      '!datetime' => '<time datetime="!fulldatetime">'. format_date($node->created). '</time>',
+      '!datetime' => '<time datetime="!fulldatetime" pubdate>'. format_date($node->created). '</time>',
       '!fulldatetime' => format_date($node->created, 'custom', 'Y-m-d\TH:i:sZ')
     ));
 }
@@ -55,7 +129,7 @@ function framework_comment_submitted($comment) {
   return t('!username | !datetime',
     array(
       '!username' => '<span class="author">'. theme('username', $comment). '</span>',
-      '!datetime' => '<time datetime="!fulldatetime">'. format_date($comment->timestamp). '</time>',
+      '!datetime' => '<time datetime="!fulldatetime" pubdate>'. format_date($comment->timestamp). '</time>',
       '!fulldatetime' => format_date($comment->created, 'custom', 'Y-m-d\TH:i:sZ')
     ));
 }
