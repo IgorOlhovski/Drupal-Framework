@@ -1,4 +1,4 @@
-<div id="wrapper" class="clearfix">
+<div id="container" class="clearfix">
 
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -14,33 +14,50 @@
       </a>
     <?php endif; ?>
     <?php if ($site_name || $site_slogan): ?>
-      <div id="site-name-slogan">
+      <hgroup id="site-name-slogan">
         <?php if ($site_name): ?>
-          <?php if ($title): ?>
-            <div id="site-name"><strong>
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
-            </strong></div>
-          <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
+          <h1 id="site-name">
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
+          </h1>
         <?php endif; ?>
         <?php if ($site_slogan): ?>
-          <div id="site-slogan"><?php print $site_slogan; ?></div>
+          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
         <?php endif; ?>
-      </div>
+      </hgroup>
     <?php endif; ?>
+
     <?php print render($page['header']); ?>
 
-	<?php if ($main_menu || $secondary_menu || $page['navigation']): ?>
+    <?php if ($main_menu || $secondary_menu || !empty($page['navigation'])): ?>
       <nav id="navigation" role="navigation" class="clearfix">
-        <?php if ($page['navigation']): ?> <!--if block in navigation region, override $main_menu and $secondary_menu-->
+        <?php if (!empty($page['navigation'])): ?> <!--if block in navigation region, override $main_menu and $secondary_menu-->
           <?php print render($page['navigation']); ?>
         <?php endif; ?>
-        <?php if (!$page['navigation']): ?>
-          <?php if ($main_menu): print $main_menu; endif; ?>
-          <?php if ($secondary_menu): print $secondary_menu; endif; ?>
+        <?php if (empty($page['navigation'])): ?>
+		  <?php print theme('links__system_main_menu', array(
+            'links' => $main_menu,
+            'attributes' => array(
+              'id' => 'main-menu',
+              'class' => array('links', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Main menu'),
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
+		  <?php print theme('links__system_secondary_menu', array(
+            'links' => $secondary_menu,
+            'attributes' => array(
+              'id' => 'secondary-menu',
+              'class' => array('links', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Secondary menu'),
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
         <?php endif; ?>
       </nav> <!-- /#navigation -->
     <?php endif; ?>
@@ -77,4 +94,4 @@
     <?php print $feed_icons ?>
   </footer> <!-- /#footer -->
 
-</div> <!-- /#wrapper -->
+</div> <!-- /#container -->

@@ -22,49 +22,10 @@ function framework_breadcrumb($variables) {
   if (!empty($breadcrumb)) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
-    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+    $heading = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
     // Uncomment to add current page to breadcrumb
 	// $breadcrumb[] = drupal_get_title();
-    $output .= '<nav class="breadcrumb">' . implode(' » ', $breadcrumb) . '</nav>';
-    return $output;
-  }
-}
-
-/**
- * Override or insert variables into the page template.
- */
-function framework_preprocess_page(&$vars) {
-  if (isset($vars['main_menu'])) {
-    $vars['main_menu'] = theme('links__system_main_menu', array(
-      'links' => $vars['main_menu'],
-      'attributes' => array(
-        'class' => array('links', 'main-menu', 'clearfix'),
-      ),
-      'heading' => array(
-        'text' => t('Main menu'),
-        'level' => 'h2',
-        'class' => array('element-invisible'),
-      )
-    ));
-  }
-  else {
-    $vars['main_menu'] = FALSE;
-  }
-  if (isset($vars['secondary_menu'])) {
-    $vars['secondary_menu'] = theme('links__system_secondary_menu', array(
-      'links' => $vars['secondary_menu'],
-      'attributes' => array(
-        'class' => array('links', 'secondary-menu', 'clearfix'),
-      ),
-      'heading' => array(
-        'text' => t('Secondary menu'),
-        'level' => 'h2',
-        'class' => array('element-invisible'),
-      )
-    ));
-  }
-  else {
-    $vars['secondary_menu'] = FALSE;
+    return '<nav class="breadcrumb">' . $heading . implode(' » ', $breadcrumb) . '</nav>';
   }
 }
 
@@ -97,6 +58,50 @@ function framework_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
   }
+}
+
+/**
+ * Preprocess variables for region.tpl.php
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("region" in this case.)
+ */
+function framework_preprocess_region(&$variables, $hook) {
+  // Use a bare template for the content region.
+  if ($variables['region'] == 'content') {
+    $variables['theme_hook_suggestions'][] = 'region__bare';
+  }
+}
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function framework_preprocess_block(&$variables, $hook) {
+  // Use a bare template for the page's main content.
+  if ($variables['block_html_id'] == 'block-system-main') {
+    $variables['theme_hook_suggestions'][] = 'block__bare';
+  }
+  $variables['title_attributes_array']['class'][] = 'block-title';
+}
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+function framework_process_block(&$variables, $hook) {
+  // Drupal 7 should use a $title variable instead of $block->subject.
+  $variables['title'] = $variables['block']->subject;
 }
 
 /**
