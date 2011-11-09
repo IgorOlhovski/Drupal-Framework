@@ -134,14 +134,28 @@ function framework_comment_submitted($comment) {
     ));
 }
 
+/**
+ * Duplicate of theme_menu_local_tasks() but adds clearfix to tabs.
+ */
 function framework_menu_local_tasks() {
   $output = '';
 
-  if ($primary = menu_primary_local_tasks()) {
-    $output .= "<ul class=\"tabs primary clearfix\">\n" . $primary . "</ul>\n";
+  // CTools requires a different set of local task functions.
+  if (module_exists('ctools')) {
+    ctools_include('menu');
+    $primary = ctools_menu_primary_local_tasks();
+    $secondary = ctools_menu_secondary_local_tasks();
   }
-  if ($secondary = menu_secondary_local_tasks()) {
-    $output .= "<ul class=\"tabs secondary clearfix\">\n" . $secondary . "</ul>\n";
+  else {
+    $primary = menu_primary_local_tasks();
+    $secondary = menu_secondary_local_tasks();
+  }
+
+  if ($primary) {
+    $output .= '<ul class="tabs primary clearfix">' . $primary . '</ul>';
+  }
+  if ($secondary) {
+    $output .= '<ul class="tabs secondary clearfix">' . $secondary . '</ul>';
   }
 
   return $output;
